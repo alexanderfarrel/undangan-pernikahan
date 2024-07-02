@@ -1,11 +1,11 @@
 import React from "react";
 import "./App.css";
-import IntroViews from "./templates/views/introViews";
+import IntroView from "./templates/views/introView";
 
 function App() {
   return (
     <React.Fragment>
-      <IntroViews />
+      <IntroView />
     </React.Fragment>
   );
 }
