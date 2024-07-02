@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.hasby {
+  fill-opacity: 0;
+  stroke: #986a52;
+  stroke-width: 2px;
+  stroke-dasharray: 4500;
+  animation: draw 10s ease;
+  width: 100%;
+}
+.hasby2 {
+  fill-opacity: 0;
+  stroke: #986a52;
+  stroke-width: 1.2px;
+  stroke-dasharray: 4500;
+  width: 100%;
+  animation: draw 10s ease;
+}
+
+@keyframes draw {
+  from {
+    stroke-dashoffset: 4500;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
