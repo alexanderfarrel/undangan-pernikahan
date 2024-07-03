@@ -2,28 +2,45 @@
 @tailwind components;
 @tailwind utilities;
 
-.hasby {
+.dewa {
   fill-opacity: 0;
   stroke: #986a52;
-  stroke-width: 2px;
+  stroke-width: 0px;
   stroke-dasharray: 4500;
-  animation: draw 10s ease;
+  animation: draw 10s ease forwards;
+  max-width: 350px;
   width: 100%;
 }
-.hasby2 {
+.tina {
   fill-opacity: 0;
   stroke: #986a52;
-  stroke-width: 1.2px;
+  stroke-width: 0px;
   stroke-dasharray: 4500;
   width: 100%;
-  animation: draw 10s ease;
+  max-width: 300px;
+  animation: draw 10s ease 2s forwards;
+}
+
+.dan {
+  fill-opacity: 0;
+  stroke: #986a52;
+  stroke-width: 0px;
+  stroke-dasharray: 4500;
+  width: 100%;
+  max-width: 300px;
+  animation: draw 10s ease 1s forwards;
 }
 
 @keyframes draw {
-  from {
+  0% {
     stroke-dashoffset: 4500;
+    stroke-width: 0px;
   }
-  to {
+  10% {
+    stroke-width: 1.5px;
+  }
+  100% {
     stroke-dashoffset: 0;
+    stroke-width: 1.5px;
   }
 }
