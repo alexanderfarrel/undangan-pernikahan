@@ -11,7 +11,7 @@ function App() {
   return (
     <React.Fragment>
       <div
-        className={`relative w-full flex flex-col items-center bg-black -z-20`}
+        className={`relative w-full flex flex-col items-center bg-black z-0`}
       >
         <motion.div
           initial={{ opacity: 1 }}

@@ -39,7 +39,7 @@ export default function Introduction({ windowWidth }: { windowWidth: number }) {
 
   return (
     <section className="relative w-full min-h-screen flex flex-col justify-center items-center bg-white py-10">
-      <div className="w-full h-full -top-10 overflow-hidden absolute">
+      <div className="w-full h-full -top-10 overflow-hidden absolute -z-10">
         <Wave />
       </div>
       <div className="w-full max-w-[350px] px-5">
