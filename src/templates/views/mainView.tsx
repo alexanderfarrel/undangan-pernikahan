@@ -111,7 +111,7 @@ export default function MainView({ isOpen }: { isOpen: Boolean }) {
           <div
             className="w-full max-w-xl h-[112dvh] -z-10"
             style={{
-              backgroundImage: "url('images/shiina.jpg')",
+              backgroundImage: "url('/images/shiina.jpg')",
               backgroundRepeat: "no-repeat",
               backgroundPosition: "center",
               backgroundSize: "cover",
