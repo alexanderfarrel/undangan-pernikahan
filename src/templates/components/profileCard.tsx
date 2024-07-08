@@ -1,10 +1,8 @@
 export default function ProfileCard({
   name,
-  image,
   desc,
 }: {
   name: string;
-  image?: string;
   desc: string;
 }) {
   return (
