@@ -74,6 +74,12 @@ dan Ibu Siti Sofiyah, S.Pd.I."
             <CountdownCard num={time.seconds} desc="Sec" />
           </div>
           <button
+            onClick={() => {
+              window.open(
+                "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NGJ2MXVibHQ2N2xuMTBwYzF0N3RjaWFoMzQgMTU5MmJjYjFiNjc5MjQxMjJhZmZmMDVmNjk3YzQ5ZjA2YzFiNzEzMzVjZjBiMDBjMjVmYTBhNDk0MzExNmI0OUBn&tmsrc=1592bcb1b67924122afff05f697c49f06c1b71335cf0b00c25fa0a4943116b49%40group.calendar.google.com",
+                "_blank"
+              );
+            }}
             className={`bg-purple-500 px-4 py-3 text-white rounded-full flex items-center justify-center gap-2 self-center ${
               windowWidth < 500 && "text-xs"
             }`}
