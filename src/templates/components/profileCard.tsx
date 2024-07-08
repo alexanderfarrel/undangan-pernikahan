@@ -11,7 +11,7 @@ export default function ProfileCard({
         <div
           className="w-full h-full rounded-full"
           style={{
-            backgroundImage: "url('public/images/formal-face.jpg')",
+            backgroundImage: "url('/images/formal-face.jpg')",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
             backgroundSize: "cover",

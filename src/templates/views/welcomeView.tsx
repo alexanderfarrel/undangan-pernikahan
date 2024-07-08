@@ -42,7 +42,7 @@ export default function WelcomeView({
           }
           className="w-36 h-36 rounded-full"
           style={{
-            backgroundImage: "url('public/images/formal-face.jpg')",
+            backgroundImage: "url('images/formal-face.jpg')",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
             backgroundSize: "cover",

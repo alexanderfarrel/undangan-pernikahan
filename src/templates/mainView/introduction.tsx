@@ -43,7 +43,7 @@ export default function Introduction({ windowWidth }: { windowWidth: number }) {
         <Wave />
       </div>
       <div className="w-full max-w-[350px] px-5">
-        <img src="public/images/bismillah.png" alt="bismillah" />
+        <img src="images/bismillah.png" alt="bismillah" />
       </div>
       <div className="mx-5 text-center flex flex-col items-center">
         <p className="font-medium">
@@ -82,13 +82,9 @@ dan Ibu Siti Sofiyah, S.Pd.I."
             }}
             className={`bg-purple-500 px-4 py-3 text-white rounded-full flex items-center justify-center gap-2 self-center ${
               windowWidth < 500 && "text-xs"
-            }`}
+            } cursor-pointer`}
           >
-            <img
-              src="public/images/calendar.png"
-              alt=""
-              className="max-w-[20px]"
-            />
+            <img src="images/calendar.png" alt="" className="max-w-[20px]" />
             Ingatkan Via Google kalender
           </button>
         </footer>
