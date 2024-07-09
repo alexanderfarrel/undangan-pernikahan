@@ -109,7 +109,7 @@ export default function MainView({ isOpen }: { isOpen: Boolean }) {
         <div className="absolute w-full h-full left-0 top-0 bg-purple-400 -z-10" />
         <div className="absolute w-full h-full left-0 top-0 flex justify-center">
           <div
-            className="w-full max-w-xl h-[112dvh] -z-10"
+            className="w-full max-w-xl h-[112vh] -z-10"
             style={{
               backgroundImage: "url('/shiina.jpg')",
               backgroundRepeat: "no-repeat",

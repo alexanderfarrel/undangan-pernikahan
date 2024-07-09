@@ -26,7 +26,7 @@ export default function WelcomeView({
   return (
     <React.Fragment>
       <motion.div
-        className="absolute max-w-xl w-full p-5 h-[100dvh] flex flex-col justify-center items-center bg-transparent gap-2 overflow-hidden"
+        className="absolute max-w-xl w-full p-5 h-[100vh] flex flex-col justify-center items-center bg-transparent gap-2 overflow-hidden"
         animate={
           isOpen && { display: "none", opacity: 0, transition: { delay: 1.2 } }
         }

@@ -4,7 +4,7 @@ import Tina from "../../assets/tina";
 
 export default function Opening() {
   return (
-    <section className="relative w-full h-[112dvh] flex flex-col items-center justify-center gap-7">
+    <section className="relative w-full h-[112vh] flex flex-col items-center justify-center gap-7">
       <p id="theWeddingOf" className="text-white">
         The Wedding Of
       </p>

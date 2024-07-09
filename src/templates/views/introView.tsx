@@ -12,7 +12,7 @@ export default function IntroView({ windowWidth }: { windowWidth: number }) {
         display: "none",
         transition: { delay: 3.7, duration: 1 },
       }}
-      className="absolute w-full h-[100dvh] flex justify-center bg-gray-200 overflow-hidden"
+      className="absolute w-full h-[100vh] flex justify-center bg-gray-200 overflow-hidden"
     >
       <div className="absolute max-w-xl w-full p-5 h-screen flex flex-col justify-center">
         <div className="relative flex flex-col justify-center items-center">
