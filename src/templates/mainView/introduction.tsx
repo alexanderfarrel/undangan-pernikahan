@@ -43,7 +43,7 @@ export default function Introduction({ windowWidth }: { windowWidth: number }) {
         <Wave />
       </div>
       <div className="w-full max-w-[350px] px-5">
-        <img src="/images/bismillah.png" alt="bismillah" />
+        <img src="/bismillah.png" alt="bismillah" />
       </div>
       <div className="mx-5 text-center flex flex-col items-center">
         <p className="font-medium">
