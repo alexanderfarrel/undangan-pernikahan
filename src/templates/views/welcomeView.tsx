@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Dewa from "../../assets/dewa";
 import Dan from "../../assets/dan";
 import Tina from "../../assets/tina";
@@ -12,7 +12,14 @@ export default function WelcomeView({
   isOpen: boolean;
   setIsOpen: (boolean: boolean) => void;
 }) {
+  const [name, setName] = useState("");
   const windowWidth = useWindowWidth();
+  useEffect(() => {
+    const path = window.location.pathname;
+    const name = path?.split("/")[1].split("-").join(" ");
+    setName(name);
+  }, []);
+
   const handleClick = () => {
     setIsOpen(true);
   };
@@ -40,7 +47,7 @@ export default function WelcomeView({
               transition: { duration: 0.5, delay: 0.3 },
             }
           }
-          className="w-36 h-36 rounded-full"
+          className="w-44 h-44 rounded-full"
           style={{
             backgroundImage: "url('/formal-face.jpg')",
             backgroundRepeat: "no-repeat",
@@ -74,16 +81,26 @@ export default function WelcomeView({
               transition: { duration: 0.5, delay: 0.3 },
             }
           }
-          className="text-white/80 mb-2"
+          className={`text-white/80`}
         >
           Kpd. Bpk/Ibu/Saudara/i
         </motion.p>
+        {name !== "" && (
+          <>
+            <h1 className="text-white font-medium capitalize">{name}</h1>
+            <img
+              src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${name}`}
+              alt={name}
+              className="w-24 h-24 p-2 bg-white"
+            />
+          </>
+        )}
         <motion.button
           animate={
             isOpen && { opacity: 0, y: 30, transition: { duration: 0.5 } }
           }
           onClick={handleClick}
-          className={`p-[6px] px-4 bg-purple-400 text-white rounded-full ${
+          className={`p-[6px] px-4 bg-purple-400 text-white rounded-full mt-2 ${
             windowWidth < 500 && "text-xs"
           }`}
         >
