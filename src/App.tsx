@@ -20,7 +20,7 @@ function App() {
           }
           className="absolute top-0 left-0 w-full h-screen -z-10"
           style={{
-            backgroundImage: "url('/images/formal-face.jpg')",
+            backgroundImage: "url('/formal-face.jpg')",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
             backgroundSize: "cover",

@@ -39,7 +39,7 @@ export default function Introduction({ windowWidth }: { windowWidth: number }) {
 
   return (
     <section className="relative w-full min-h-screen flex flex-col justify-center items-center bg-white py-10">
-      <div className="w-full h-full -top-10 overflow-hidden absolute -z-10">
+      <div className="w-full h-full -top-10 overflow-hidden absolute z-10">
         <Wave />
       </div>
       <div className="w-full max-w-[350px] px-5">
@@ -84,7 +84,7 @@ dan Ibu Siti Sofiyah, S.Pd.I."
               windowWidth < 500 && "text-xs"
             } cursor-pointer`}
           >
-            <img src="/images/calendar.png" alt="" className="max-w-[20px]" />
+            <img src="/calendar.png" alt="" className="max-w-[20px]" />
             Ingatkan Via Google kalender
           </button>
         </footer>
