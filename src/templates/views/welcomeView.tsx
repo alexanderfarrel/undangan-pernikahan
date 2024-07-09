@@ -44,7 +44,7 @@ export default function WelcomeView({
             isOpen && {
               opacity: 0,
               y: -30,
-              transition: { duration: 0.5, delay: 0.3 },
+              transition: { duration: 0.5, delay: 0.2 },
             }
           }
           className="w-44 h-44 rounded-full"
@@ -87,8 +87,26 @@ export default function WelcomeView({
         </motion.p>
         {name !== "" && (
           <>
-            <h1 className="text-white font-medium capitalize">{name}</h1>
-            <img
+            <motion.h1
+              animate={
+                isOpen && {
+                  opacity: 0,
+                  y: 30,
+                  transition: { duration: 0.5, delay: 0.2 },
+                }
+              }
+              className="text-white font-medium capitalize"
+            >
+              {name}
+            </motion.h1>
+            <motion.img
+              animate={
+                isOpen && {
+                  opacity: 0,
+                  y: 30,
+                  transition: { duration: 0.5, delay: 0.1 },
+                }
+              }
               src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${name}`}
               alt={name}
               className="w-24 h-24 p-2 bg-white"
