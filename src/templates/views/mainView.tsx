@@ -1,98 +1,22 @@
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
-import gsap from "gsap";
 import Opening from "../mainView/opening";
 import Introduction from "../mainView/introduction";
 import useWindowWidth from "../../services/hooks/useWindowWidth";
+import StartAnimation from "../components/startAnimation";
+import Location from "../mainView/location";
+import Memorable from "../mainView/memorable";
+import Doa from "../mainView/doa";
 
 export default function MainView({ isOpen }: { isOpen: Boolean }) {
   const windowWidth = useWindowWidth();
-  const startAnimation = () => {
-    const ctx = gsap.context(() => {
-      const t1 = gsap.timeline();
-      t1.from("#theWeddingOf", {
-        opacity: 0,
-        duration: 1,
-        delay: 2.3,
-      })
-        .from(
-          "#dewa",
-          {
-            x: "-=50",
-            opacity: 0,
-            duration: 0.5,
-            ease: "power1.out",
-          },
-          "-=0.4"
-        )
-        .from(
-          "#dan",
-          {
-            opacity: 0,
-            duration: 0.7,
-            ease: "power1.out",
-          },
-          "<"
-        )
-        .from(
-          "#tina",
-          {
-            x: "+=50",
-            opacity: 0,
-            duration: 0.5,
-            ease: "power1.out",
-          },
-          "<"
-        )
-        .from(
-          "#dateParent",
-          {
-            opacity: 0,
-          },
-          "-=0.4"
-        )
-        .from(
-          "#day",
-          {
-            opacity: 0,
-            x: "-=30",
-            duration: 0.5,
-          },
-          "<"
-        )
-        .from(
-          "#month",
-          {
-            opacity: 0,
-            x: "+=15",
-            duration: 0.5,
-          },
-          "<"
-        )
-        .from("#year", {
-          opacity: 0,
-          y: "+=15",
-          duration: 0.5,
-        })
-        .from(
-          "#date",
-          {
-            opacity: 0,
-            y: "-=30",
-            duration: 0.5,
-          },
-          "<"
-        );
-    });
-
-    return () => ctx.revert();
-  };
 
   useEffect(() => {
     if (isOpen) {
-      startAnimation();
+      StartAnimation();
     }
   }, [isOpen]);
+
   return (
     <React.Fragment>
       <motion.div
@@ -124,6 +48,9 @@ export default function MainView({ isOpen }: { isOpen: Boolean }) {
           <React.Fragment>
             <Opening />
             <Introduction windowWidth={windowWidth} />
+            <Location windowWidth={windowWidth} />
+            <Doa />
+            <Memorable windowWidth={windowWidth} />
           </React.Fragment>
         )}
       </motion.div>

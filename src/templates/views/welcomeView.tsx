@@ -26,7 +26,7 @@ export default function WelcomeView({
   return (
     <React.Fragment>
       <motion.div
-        className="absolute max-w-xl w-full p-5 h-[100vh] flex flex-col justify-center items-center bg-transparent gap-2 overflow-hidden"
+        className="absolute max-w-xl w-full p-5 h-[100dvh] flex flex-col justify-center items-center bg-transparent gap-2 overflow-hidden"
         animate={
           isOpen && { display: "none", opacity: 0, transition: { delay: 1.2 } }
         }
@@ -66,12 +66,12 @@ export default function WelcomeView({
           }
           className="flex max-w-[13rem]"
         >
-          <Dewa className="fill-white max-w-[300px] w-full -mr-5" />
+          <Tina className="fill-white max-w-[300px] w-full -mr-5" />
           <Dan
             viewBox="-5 68 300 110"
             className="fill-white max-w-[90px] w-full"
           />
-          <Tina className="fill-white max-w-[300px] w-full -ml-5" />
+          <Dewa className="fill-white max-w-[300px] w-full -ml-5" />
         </motion.div>
         <motion.p
           animate={
@@ -95,7 +95,7 @@ export default function WelcomeView({
                   transition: { duration: 0.5, delay: 0.2 },
                 }
               }
-              className="text-white font-medium capitalize"
+              className="text-white font-medium capitalize -mt-1"
             >
               {name}
             </motion.h1>

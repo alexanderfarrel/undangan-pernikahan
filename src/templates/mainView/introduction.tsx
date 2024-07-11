@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Wave from "../../assets/wave";
 import CountdownCard from "../components/countdownCard";
 import ProfileCard from "../components/profileCard";
+import MainLayout from "../components/mainLayout";
 
 export default function Introduction({ windowWidth }: { windowWidth: number }) {
   const [time, setTime] = useState({
@@ -38,14 +38,11 @@ export default function Introduction({ windowWidth }: { windowWidth: number }) {
   };
 
   return (
-    <section className="relative w-full min-h-screen flex flex-col justify-center items-center bg-white py-10">
-      <div className="w-full h-full -top-10 overflow-hidden absolute z-10">
-        <Wave />
-      </div>
-      <div className="w-full max-w-[350px] px-5">
+    <MainLayout>
+      <div className="w-full max-w-[350px] -my-10">
         <img src="/bismillah.png" alt="bismillah" />
       </div>
-      <div className="mx-5 text-center flex flex-col items-center">
+      <div className="text-center flex flex-col items-center">
         <p className="font-medium">
           Assalamu'alaikum Warahmatullaahi Wabarakaatuh
         </p>
@@ -54,13 +51,13 @@ export default function Introduction({ windowWidth }: { windowWidth: number }) {
           Ya Allah semoga ridho-Mu tercurah mengiringi pernikahan kami.
         </p>{" "}
         <ProfileCard
-          name="Nadiwa Hasby"
+          name="Agustina Tari"
           desc="Putra ketiga dari
-Bapak Supriyono, S.Pd.SD.
-dan Ibu Siti Sofiyah, S.Pd.I."
+        Bapak Supriyono, S.Pd.SD.
+        dan Ibu Siti Sofiyah, S.Pd.I."
         />
         <ProfileCard
-          name="Agustina Tari"
+          name="Nadiwa Hasby"
           desc="Putra ketiga dari
 Bapak Supriyono, S.Pd.SD.
 dan Ibu Siti Sofiyah, S.Pd.I."
@@ -81,14 +78,14 @@ dan Ibu Siti Sofiyah, S.Pd.I."
               );
             }}
             className={`bg-purple-500 px-4 py-3 text-white rounded-full flex items-center justify-center gap-2 self-center ${
-              windowWidth < 500 && "text-xs"
-            } cursor-pointer`}
+              windowWidth < 500 && "text-[13px]"
+            } cursor-pointer z-20`}
           >
             <img src="/calendar.png" alt="" className="max-w-[20px]" />
             Ingatkan Via Google kalender
           </button>
         </footer>
       </div>
-    </section>
+    </MainLayout>
   );
 }
