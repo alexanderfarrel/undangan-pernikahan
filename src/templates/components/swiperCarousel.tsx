@@ -1,6 +1,7 @@
 import { useMotionValue, motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import getMaxValue from "../../services/hooks/getMaxValue";
+import smoothScrollTo from "../../services/hooks/smoothScroll";
 
 export default function SwiperCarousel({
   windowWidth,
@@ -14,12 +15,13 @@ export default function SwiperCarousel({
   IMAGES: { url: string; id: number }[];
 }) {
   const [swiperWidth, setSwiperWidth] = useState(0);
+  const [animateClose, setAnimateClose] = useState(false);
   useEffect(() => {
     setSwiperWidth(
       getMaxValue({
         maxScreenWidth: 1920,
         minScreenWidth: 400,
-        maxValue: 50,
+        maxValue: 98,
         minValue: 50,
       })
     );
@@ -38,10 +40,18 @@ export default function SwiperCarousel({
     }
   };
 
+  const handleClose = () => {
+    setAnimateClose(true);
+    setTimeout(() => {
+      setAnimateClose(false);
+      setImageIndex(null);
+    }, 500);
+  };
+
   useEffect(() => {
     const handleClickOutside = (event: any) => {
       if (event.target.dataset.isClose === "true") {
-        setImageIndex(null);
+        handleClose();
       }
     };
 
@@ -55,9 +65,12 @@ export default function SwiperCarousel({
       {/* images swipes */}
       <motion.section
         animate={{
-          opacity: imageIndex === null ? 0 : 1,
+          opacity: imageIndex === null ? 0 : animateClose ? 0 : 1,
+          transition: {
+            delay: animateClose ? 0.35 : 0,
+          },
         }}
-        data-isClose="true"
+        data-isclose="true"
         className={`fixed top-0 left-0 w-full h-full overflow-hidden z-30 opacity-0 bg-black/50 ${
           imageIndex !== null ? "" : "hidden"
         }`}
@@ -81,6 +94,7 @@ export default function SwiperCarousel({
             type: "spring",
             stiffness: 250,
             damping: 30,
+            // mass: 1,
             opacity: {
               //   delay: animateClose || imageIndex == null ? 0 : 0.35,
             },
@@ -88,11 +102,18 @@ export default function SwiperCarousel({
           onDragEnd={onDragEnd}
         >
           <ImagesSwiper
+            animateClose={animateClose}
             imageIndex={imageIndex}
-            picturesCarousel={IMAGES}
+            IMAGES={IMAGES}
             swiperWidth={swiperWidth}
           />
         </motion.div>
+        <FullImageFooter
+          imageIndex={imageIndex}
+          IMAGES={IMAGES}
+          setImageIndex={setImageIndex}
+          animateClose={animateClose}
+        />
       </motion.section>
     </>
   );
@@ -100,23 +121,21 @@ export default function SwiperCarousel({
 
 const ImagesSwiper = ({
   imageIndex,
-  picturesCarousel,
+  IMAGES,
   swiperWidth,
+  animateClose,
 }: {
   imageIndex: number;
-  picturesCarousel: { url: string; id: number }[];
+  IMAGES: { url: string; id: number }[];
   swiperWidth: number;
+  animateClose: boolean;
 }) => {
   return (
     <>
-      {picturesCarousel.map((item, index) => (
+      {IMAGES.map((item, index) => (
         <motion.div
-          initial={{
-            y: 100,
-          }}
           animate={{
-            opacity: imageIndex == null ? 0 : 1,
-            y: 0,
+            opacity: imageIndex == null ? 0 : animateClose ? 0 : 1,
           }}
           transition={{
             type: "tween",
@@ -148,5 +167,49 @@ const ImagesSwiper = ({
         </motion.div>
       ))}
     </>
+  );
+};
+
+const FullImageFooter = ({
+  IMAGES,
+  imageIndex,
+  setImageIndex,
+  animateClose,
+}: {
+  IMAGES: { url: string; id: number }[];
+  imageIndex: number;
+  setImageIndex: Function;
+  animateClose: boolean;
+}) => {
+  const container = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (container.current) {
+      smoothScrollTo(container.current, imageIndex * 104 - 104, 250); // Durasi scroll dalam milidetik
+    }
+  }, [imageIndex]);
+  return (
+    <div className="absolute bottom-0 w-full flex justify-center">
+      <motion.div
+        ref={container}
+        initial={{ y: "100%" }}
+        animate={{
+          y: imageIndex == null ? "100%" : animateClose ? "100%" : "0%",
+        }}
+        transition={{ type: "tween", delay: animateClose ? 0 : 0.3 }}
+        className="flex overflow-x-scroll bg-white gap-2 p-2 hidden-scrollbar"
+      >
+        {IMAGES.map((image, i) => (
+          <img
+            key={i}
+            onClick={() => setImageIndex(i)}
+            src={image.url}
+            alt=""
+            className={`w-24 h-24 shrink-0 rounded-lg border-2 ${
+              imageIndex == i ? "border-purple-500" : "border-white"
+            } transition-all duration-500`}
+          />
+        ))}
+      </motion.div>
+    </div>
   );
 };

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Images from "../components/images";
 import MainLayout from "../components/mainLayout";
 import SwiperCarousel from "../components/swiperCarousel";
@@ -28,6 +28,9 @@ const IMAGES = [
 
 export default function Memorable({ windowWidth }: { windowWidth: number }) {
   const [imageIndex, setImageIndex] = useState<number | null>(null);
+  useEffect(() => {
+    document.body.style.overflow = imageIndex == null ? "auto" : "hidden";
+  }, [imageIndex]);
   return (
     <>
       <MainLayout className="gap-10">
