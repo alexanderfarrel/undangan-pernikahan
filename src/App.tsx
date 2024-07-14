@@ -24,9 +24,6 @@ function App() {
           filter: "brightness(0.3)",
         }}
       />
-      {/* <div className="text-white h-screen bg-green-500 fixed top-0 left-0 flex justify-center items-center">
-        testes
-      </div> */}
       <MainView isOpen={isOpen} />
       <WelcomeView setIsOpen={setIsOpen} isOpen={isOpen} />
       <IntroView />

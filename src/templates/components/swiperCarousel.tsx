@@ -1,5 +1,5 @@
 import { useMotionValue, motion } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import getMaxValue from "../../services/hooks/getMaxValue";
 import smoothScrollTo from "../../services/hooks/smoothScroll";
 
@@ -40,26 +40,33 @@ export default function SwiperCarousel({
     }
   };
 
-  const handleClose = () => {
-    setAnimateClose(true);
-    setTimeout(() => {
-      setAnimateClose(false);
-      setImageIndex(null);
-    }, 500);
-  };
+  const timeoutRef = useRef<number | null>(null);
+
+  const handleClickOutside = useCallback(
+    (event: any) => {
+      if (event.target.dataset.isClose === "true") {
+        if (timeoutRef.current !== null) {
+          clearTimeout(timeoutRef.current);
+        }
+        setAnimateClose(true);
+        timeoutRef.current = window.setTimeout(() => {
+          setAnimateClose(false);
+          setImageIndex(null);
+        }, 400);
+      }
+    },
+    [setImageIndex]
+  );
 
   useEffect(() => {
-    const handleClickOutside = (event: any) => {
-      if (event.target.dataset.isClose === "true") {
-        handleClose();
-      }
-    };
-
     document.addEventListener("click", handleClickOutside);
     return () => {
       document.removeEventListener("click", handleClickOutside);
+      if (timeoutRef.current !== null) {
+        clearTimeout(timeoutRef.current);
+      }
     };
-  }, []);
+  }, [handleClickOutside]);
   return (
     <>
       {/* images swipes */}
@@ -199,15 +206,19 @@ const FullImageFooter = ({
         className="flex overflow-x-scroll bg-white gap-2 p-2 hidden-scrollbar"
       >
         {IMAGES.map((image, i) => (
-          <img
+          <div
             key={i}
-            onClick={() => setImageIndex(i)}
-            src={image.url}
-            alt=""
-            className={`w-24 h-24 shrink-0 rounded-lg border-2 ${
+            className={`w-24 h-24 overflow-hidden rounded-lg border-2 ${
               imageIndex == i ? "border-purple-500" : "border-white"
             } transition-all duration-500`}
-          />
+          >
+            <img
+              onClick={() => setImageIndex(i)}
+              src={image.url}
+              alt=""
+              className={`w-24 h-24 shrink-0 rounded-lg transition-all duration-300 cursor-pointer hover:scale-125`}
+            />
+          </div>
         ))}
       </motion.div>
     </div>
