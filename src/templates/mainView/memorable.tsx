@@ -28,9 +28,9 @@ const IMAGES = [
 
 export default function Memorable({ windowWidth }: { windowWidth: number }) {
   const [imageIndex, setImageIndex] = useState<number | null>(null);
-  useEffect(() => {
-    document.body.style.overflow = imageIndex == null ? "auto" : "hidden";
-  }, [imageIndex]);
+  // useEffect(() => {
+  //   document.body.style.overflow = imageIndex == null ? "auto" : "hidden";
+  // }, [imageIndex]);
   return (
     <>
       <MainLayout className="gap-10">

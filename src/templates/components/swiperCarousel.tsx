@@ -216,7 +216,7 @@ const FullImageFooter = ({
               onClick={() => setImageIndex(i)}
               src={image.url}
               alt=""
-              className={`w-24 h-24 shrink-0 rounded-lg transition-all duration-300 cursor-pointer hover:scale-125`}
+              className={`w-24 h-24 shrink-0 transition-all duration-300 cursor-pointer hover:scale-125`}
             />
           </div>
         ))}

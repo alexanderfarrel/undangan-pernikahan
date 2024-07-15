@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Opening from "../mainView/opening";
 import Introduction from "../mainView/introduction";
@@ -7,9 +7,20 @@ import StartAnimation from "../components/startAnimation";
 import Location from "../mainView/location";
 import Memorable from "../mainView/memorable";
 import Doa from "../mainView/doa";
+import Gift from "../mainView/gift";
+import Rsvp from "../mainView/rsvp";
+import Comment from "../mainView/comment";
+import EndFooter from "../mainView/endFooter";
 
 export default function MainView({ isOpen }: { isOpen: Boolean }) {
   const windowWidth = useWindowWidth();
+
+  const [name, setName] = useState("");
+  useEffect(() => {
+    const path = window.location.pathname;
+    const name = path?.split("/")[1].split("-").join(" ");
+    setName(name);
+  }, []);
 
   useEffect(() => {
     if (isOpen) {
@@ -51,6 +62,10 @@ export default function MainView({ isOpen }: { isOpen: Boolean }) {
             <Location windowWidth={windowWidth} />
             <Doa />
             <Memorable windowWidth={windowWidth} />
+            <Gift />
+            <Rsvp name={name} />
+            <Comment />
+            <EndFooter />
           </React.Fragment>
         )}
       </motion.div>

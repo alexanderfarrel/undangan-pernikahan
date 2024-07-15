@@ -12,8 +12,8 @@ export default function WelcomeView({
   isOpen: boolean;
   setIsOpen: (boolean: boolean) => void;
 }) {
-  const [name, setName] = useState("");
   const windowWidth = useWindowWidth();
+  const [name, setName] = useState("");
   useEffect(() => {
     const path = window.location.pathname;
     const name = path?.split("/")[1].split("-").join(" ");

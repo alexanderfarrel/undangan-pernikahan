@@ -9,7 +9,7 @@ export default function Images({
 }) {
   return (
     <div
-      className="relative max-w-[300px] max-h-[300px] overflow-hidden group hover:cursor-pointer"
+      className="relative max-w-[300px] max-h-[300px] overflow-hidden group hover:cursor-pointer rounded-xl"
       id={id.toString()}
       onClick={onClick}
     >
