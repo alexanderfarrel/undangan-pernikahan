@@ -52,3 +52,19 @@
     display: none;
   }
 }
+
+@font-face {
+  font-family: Playwrite BE VLG;
+  src: url(/fonts/PlaywriteBEVLG-VariableFont_wght.ttf);
+}
+
+.latin-20 {
+  font-weight: 300;
+  font-size: 20px;
+  font-family: Playwrite BE VLG;
+}
+.latin-25 {
+  font-weight: 300;
+  font-size: 25px;
+  font-family: Playwrite BE VLG;
+}

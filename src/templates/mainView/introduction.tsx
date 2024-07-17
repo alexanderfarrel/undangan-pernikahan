@@ -1,8 +1,8 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import CountdownCard from "../components/countdownCard";
 import ProfileCard from "../components/profileCard";
 import MainLayout from "../components/mainLayout";
-import { useInView, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import useVisibility from "../../services/hooks/useVisibility";
 
 export default function Introduction({ windowWidth }: { windowWidth: number }) {

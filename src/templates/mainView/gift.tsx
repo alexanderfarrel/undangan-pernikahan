@@ -4,7 +4,7 @@ import MainLayout from "../components/mainLayout";
 export default function Gift() {
   return (
     <MainLayout className="text-center gap-5" height="h-full">
-      <h1 className="font-bold">Wedding Gift</h1>
+      <h1 className="latin-25">Wedding Gift</h1>
       <p>
         Doa Restu Anda merupakan karunia yang sangat berarti bagi kami. Dan jika
         memberi adalah ungkapan tanda kasih Anda, Anda dapat memberi kado secara

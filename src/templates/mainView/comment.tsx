@@ -4,7 +4,7 @@ import MainLayout from "../components/mainLayout";
 export default function Comment() {
   return (
     <MainLayout height="h-full" className="gap-5">
-      <h1 className="text-xl font-bold">Kirim Ucapan & Doa Restu</h1>
+      <h1 className="text-xl latin-25">Kirim Ucapan & Doa Restu</h1>
       <form action="" className="flex flex-col gap-2 w-full z-10">
         <input
           type="text"

@@ -34,7 +34,7 @@ export default function Memorable({ windowWidth }: { windowWidth: number }) {
   return (
     <>
       <MainLayout className="gap-10">
-        <h1 className="text-xl font-bold">Memorable Moment</h1>
+        <h1 className="latin-25">Memorable Moment</h1>
 
         <div className="flex flex-col gap-5 z-10">
           {IMAGES.map((image, i) => (
@@ -48,7 +48,7 @@ export default function Memorable({ windowWidth }: { windowWidth: number }) {
         </div>
 
         <div className="shadow-custom rounded-lg text-center flex flex-col gap-5 max-w-[450px] p-5 text-neutral-500">
-          <h2 className="font-medium text-xl text-black">Our Story</h2>
+          <h2 className="latin-20 text-black">Our Story</h2>
           <p>Our Story</p>
           {/* <a
             href="/shiina.jpg"

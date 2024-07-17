@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
 
 export default function Modal({
   children,
@@ -35,12 +36,25 @@ export default function Modal({
     document.addEventListener("mousedown", handleClickOutside);
   }, [closed, handleClose, onClose]);
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={
+        close
+          ? { opacity: 0, display: "none" }
+          : { opacity: 1, display: "fixed" }
+      }
+      transition={{ duration: 0.2, delay: close ? 0.2 : 0 }}
       className={`fixed left-0 right-0 top-0 bottom-0 flex items-center justify-center bg-black/50 z-30 opacity-100`}
     >
-      <div className={`bg-white p-5 mx-2 rounded-xl ${width}`} ref={ref}>
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={close ? { opacity: 0, y: 50 } : { opacity: 1, y: 0 }}
+        transition={{ duration: 0.2, delay: close ? 0 : 0.2 }}
+        className={`bg-white p-5 mx-2 rounded-xl ${width}`}
+        ref={ref}
+      >
         {children}
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }

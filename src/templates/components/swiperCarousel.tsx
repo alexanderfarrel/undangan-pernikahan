@@ -203,7 +203,7 @@ const FullImageFooter = ({
           y: imageIndex == null ? "100%" : animateClose ? "100%" : "0%",
         }}
         transition={{ type: "tween", delay: animateClose ? 0 : 0.3 }}
-        className="flex overflow-x-scroll bg-white gap-2 p-2 hidden-scrollbar"
+        className="flex overflow-x-scroll bg-white gap-2 p-2 hidden-scrollbar rounded-xl"
       >
         {IMAGES.map((image, i) => (
           <div

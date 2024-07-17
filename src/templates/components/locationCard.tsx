@@ -13,7 +13,7 @@ export default function LocationCard({
 }) {
   return (
     <div className="shadow-custom p-4 flex flex-col gap-3 text-center max-w-[350px]">
-      <h1 className="font-medium">{title}</h1>
+      <h1 className="latin-20">{title}</h1>
       <p>{date}</p>
       <p>{time}</p>
       <h2 className="font-medium">Lokasi / Tempat Acara:</h2>

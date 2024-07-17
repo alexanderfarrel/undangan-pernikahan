@@ -7,7 +7,7 @@ export default function Rsvp({ name }: { name: string }) {
   return (
     <>
       <MainLayout height="h-full" className="text-center gap-4">
-        <h1 className="text-xl font-bold">RSVP</h1>
+        <h1 className="latin-25">RSVP</h1>
         <p className="font-medium">
           Tanpa mengurangi rasa hormat kami kepada para tamu undangan, mohon
           sekiranya tamu undangan dapat melakukan konfirmasi kehadiran terlebih
