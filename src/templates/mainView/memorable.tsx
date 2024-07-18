@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Images from "../components/images";
 import MainLayout from "../components/mainLayout";
 import SwiperCarousel from "../components/swiperCarousel";
