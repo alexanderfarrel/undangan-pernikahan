@@ -4,7 +4,7 @@ export default function EndFooter() {
   return (
     <MainLayout
       backgroundColor="bg-purple-400"
-      className="py-10 pb-32"
+      className="py-10 pb-16"
       height="h-full"
     >
       <h1 className="font-medium text-white">Dibuat Dengan Sepenuh Hati ❤️</h1>

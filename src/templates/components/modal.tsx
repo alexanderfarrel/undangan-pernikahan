@@ -14,8 +14,13 @@ export default function Modal({
 }) {
   const [close, setClose] = useState(false);
   const ref: any = useRef();
+  const timeoutRef = useRef<number | null>(null);
+
   const handleClose = useCallback(() => {
-    setTimeout(() => {
+    if (timeoutRef.current !== null) {
+      clearTimeout(timeoutRef.current);
+    }
+    timeoutRef.current = window.setTimeout(() => {
       onClose();
     }, 300);
     setClose(true);
@@ -34,6 +39,14 @@ export default function Modal({
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+
+      if (timeoutRef.current !== null) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
   }, [closed, handleClose, onClose]);
   return (
     <motion.div
@@ -50,7 +63,7 @@ export default function Modal({
         initial={{ opacity: 0, y: 50 }}
         animate={close ? { opacity: 0, y: 50 } : { opacity: 1, y: 0 }}
         transition={{ duration: 0.2, delay: close ? 0 : 0.2 }}
-        className={`bg-white p-5 mx-2 rounded-xl ${width}`}
+        className={`bg-white p-5 mx-2 rounded-xl w-full ${width}`}
         ref={ref}
       >
         {children}

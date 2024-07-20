@@ -2,9 +2,9 @@ import Dan from "../../assets/dan";
 import Dewa from "../../assets/dewa";
 import Tina from "../../assets/tina";
 
-export default function Opening() {
+export default function Opening({ refHome }: { refHome: any }) {
   return (
-    <section className="w-full h-[110vh] ">
+    <section ref={refHome} className="w-full h-[110vh] ">
       <main className="relative w-full h-[100dvh] flex flex-col items-center justify-center gap-7">
         <p id="theWeddingOf" className="text-white">
           The Wedding Of

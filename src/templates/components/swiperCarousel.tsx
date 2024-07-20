@@ -44,16 +44,17 @@ export default function SwiperCarousel({
 
   const handleClickOutside = useCallback(
     (event: any) => {
-      if (event.target.dataset.isClose === "true") {
-        if (timeoutRef.current !== null) {
-          clearTimeout(timeoutRef.current);
-        }
-        setAnimateClose(true);
-        timeoutRef.current = window.setTimeout(() => {
-          setAnimateClose(false);
-          setImageIndex(null);
-        }, 400);
+      if (event.target.dataset.isClose !== "true") {
+        return;
       }
+      if (timeoutRef.current !== null) {
+        clearTimeout(timeoutRef.current);
+      }
+      setAnimateClose(true);
+      timeoutRef.current = window.setTimeout(() => {
+        setAnimateClose(false);
+        setImageIndex(null);
+      }, 400);
     },
     [setImageIndex]
   );
@@ -191,32 +192,58 @@ const FullImageFooter = ({
   const container = useRef<HTMLDivElement>(null);
   useEffect(() => {
     if (container.current) {
-      smoothScrollTo(container.current, imageIndex * 104 - 104, 250); // Durasi scroll dalam milidetik
+      smoothScrollTo(container.current, imageIndex * 104 - 104, 250);
     }
   }, [imageIndex]);
+
+  const parentRef = useRef<HTMLDivElement>(null);
+  const [isWindowWidthGreaterThanParent, setIsWindowWidthGreaterThanParent] =
+    useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (parentRef.current) {
+        setIsWindowWidthGreaterThanParent(
+          window.innerWidth > parentRef.current.offsetWidth
+        );
+      }
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   return (
-    <div className="absolute bottom-0 w-full flex justify-center">
+    <div
+      ref={container}
+      className={`absolute bottom-0 w-full flex overflow-x-scroll hidden-scrollbar ${
+        isWindowWidthGreaterThanParent ? "justify-center" : "justify-start"
+      }`}
+    >
       <motion.div
-        ref={container}
+        ref={parentRef}
         initial={{ y: "100%" }}
         animate={{
           y: imageIndex == null ? "100%" : animateClose ? "100%" : "0%",
         }}
         transition={{ type: "tween", delay: animateClose ? 0 : 0.3 }}
-        className="flex overflow-x-scroll bg-white gap-2 p-2 hidden-scrollbar rounded-xl"
+        className="flex gap-2 p-2 bg-white rounded-t-xl"
       >
         {IMAGES.map((image, i) => (
           <div
             key={i}
             className={`w-24 h-24 overflow-hidden rounded-lg border-2 ${
               imageIndex == i ? "border-purple-500" : "border-white"
-            } transition-all duration-500`}
+            } transition-all duration-500 shrink-0`}
           >
             <img
               onClick={() => setImageIndex(i)}
               src={image.url}
               alt=""
-              className={`w-24 h-24 shrink-0 transition-all duration-300 cursor-pointer hover:scale-125`}
+              className={`w-24 h-24 transition-all duration-300 cursor-pointer ${
+                imageIndex == i ? "scale-125" : "scale-100"
+              }`}
             />
           </div>
         ))}

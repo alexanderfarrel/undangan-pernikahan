@@ -3,11 +3,12 @@ import Dewa from "../../assets/dewa";
 import Tina from "../../assets/tina";
 import LocationCard from "../components/locationCard";
 import MainLayout from "../components/mainLayout";
+import Button from "../ui/button";
 
-export default function Location({ windowWidth }: { windowWidth: number }) {
+export default function Location({ refLocation }: { refLocation: any }) {
   return (
     <MainLayout className="gap-10">
-      <div className="flex flex-col gap-5">
+      <div ref={refLocation} className="flex flex-col gap-5">
         <LocationCard
           title="Akad Nikah"
           date="Sabtu, 04 Februari 2023"
@@ -60,18 +61,16 @@ export default function Location({ windowWidth }: { windowWidth: number }) {
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
       />
-      <button
+      <Button
+        image="/icons/send.png"
         onClick={() =>
           window.open(
             "https://www.google.com/maps/place/Tokyo,+Jepang/@35.6220674,139.6615576,9z/data=!4m6!3m5!1s0x605d1b87f02e57e7:0x2e01618b22571b89!8m2!3d35.6764225!4d139.650027!16zL20vMDdkZms?hl=id&entry=ttu"
           )
         }
-        className={`px-4 py-2 bg-purple-500 text-white rounded-full z-10 ${
-          windowWidth < 500 && "text-[13px]"
-        }`}
       >
         Lihat Lokasi Acara
-      </button>
+      </Button>
     </MainLayout>
   );
 }

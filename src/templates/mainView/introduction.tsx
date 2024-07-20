@@ -5,7 +5,13 @@ import MainLayout from "../components/mainLayout";
 import { motion } from "framer-motion";
 import useVisibility from "../../services/hooks/useVisibility";
 
-export default function Introduction({ windowWidth }: { windowWidth: number }) {
+export default function Introduction({
+  windowWidth,
+  refBride,
+}: {
+  windowWidth: number;
+  refBride: any;
+}) {
   const [time, setTime] = useState({
     days: 0,
     hours: 0,
@@ -56,7 +62,10 @@ export default function Introduction({ windowWidth }: { windowWidth: number }) {
 
   return (
     <MainLayout>
-      <div className="relative flex justify-center items-center w-full max-w-[350px] -my-10">
+      <div
+        ref={refBride}
+        className="relative flex justify-center items-center w-full max-w-[350px] -my-10"
+      >
         <motion.div
           ref={bismillah.ref}
           animate={bismillah.isVisible ? { scaleX: 0 } : { scaleX: 1 }}

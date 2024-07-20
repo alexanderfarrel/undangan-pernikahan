@@ -16,7 +16,7 @@ function App() {
         <motion.div
           initial={{ opacity: 1 }}
           animate={
-            isOpen && { opacity: 0, transition: { duration: 1.7, delay: 1 } }
+            isOpen && { opacity: 0, transition: { duration: 1.7, delay: 1.2 } }
           }
           className="absolute top-0 left-0 w-full h-[100dvh] -z-10"
           style={{

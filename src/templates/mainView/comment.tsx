@@ -1,10 +1,12 @@
 import CommentBox from "../components/commentBox";
 import MainLayout from "../components/mainLayout";
 
-export default function Comment() {
+export default function Comment({ refComment }: { refComment: any }) {
   return (
     <MainLayout height="h-full" className="gap-5">
-      <h1 className="text-xl latin-25">Kirim Ucapan & Doa Restu</h1>
+      <h1 ref={refComment} className="text-xl latin-25">
+        Kirim Ucapan & Doa Restu
+      </h1>
       <form action="" className="flex flex-col gap-2 w-full z-10">
         <input
           type="text"
@@ -23,7 +25,7 @@ export default function Comment() {
           Kirim
         </button>
       </form>
-      <div className="max-h-[200px] overflow-y-scroll z-10 w-full">
+      <div className="max-h-[200px] overflow-y-scroll comment-scrollbar z-10 w-full">
         <CommentBox
           name="Tina"
           comment="Selamat berbahagia salam sejahtera untuk kita semua"

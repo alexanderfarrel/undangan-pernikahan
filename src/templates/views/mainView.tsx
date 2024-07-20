@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import Opening from "../mainView/opening";
 import Introduction from "../mainView/introduction";
@@ -11,9 +11,16 @@ import Gift from "../mainView/gift";
 import Rsvp from "../mainView/rsvp";
 import Comment from "../mainView/comment";
 import EndFooter from "../mainView/endFooter";
+import Navbar from "./navbar";
 
 export default function MainView({ isOpen }: { isOpen: Boolean }) {
   const windowWidth = useWindowWidth();
+
+  const refHome = useRef(null);
+  const refBride = useRef(null);
+  const refLocation = useRef(null);
+  const refImage = useRef(null);
+  const refComment = useRef(null);
 
   const [name, setName] = useState("");
   useEffect(() => {
@@ -57,14 +64,21 @@ export default function MainView({ isOpen }: { isOpen: Boolean }) {
         {/* WELCOME */}
         {isOpen && (
           <React.Fragment>
-            <Opening />
-            <Introduction windowWidth={windowWidth} />
-            <Location windowWidth={windowWidth} />
+            <Navbar
+              refHome={refHome}
+              refBride={refBride}
+              refLocation={refLocation}
+              refImage={refImage}
+              refComment={refComment}
+            />
+            <Opening refHome={refHome} />
+            <Introduction windowWidth={windowWidth} refBride={refBride} />
+            <Location refLocation={refLocation} />
             <Doa />
-            <Memorable windowWidth={windowWidth} />
+            <Memorable windowWidth={windowWidth} refImage={refImage} />
             <Gift />
             <Rsvp name={name} />
-            <Comment />
+            <Comment refComment={refComment} />
             <EndFooter />
           </React.Fragment>
         )}

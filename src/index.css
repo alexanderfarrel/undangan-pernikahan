@@ -45,6 +45,35 @@
   }
 }
 
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-purple-400;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-white rounded-full;
+}
+
+.comment-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.comment-scrollbar::-webkit-scrollbar-track {
+  @apply bg-white;
+}
+.comment-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-purple-400;
+}
+
+.hidden-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 .hidden-scrollbar {
   scrollbar-width: none;
   -ms-overflow-style: none;

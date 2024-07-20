@@ -26,15 +26,20 @@ const IMAGES = [
   },
 ];
 
-export default function Memorable({ windowWidth }: { windowWidth: number }) {
+export default function Memorable({
+  windowWidth,
+  refImage,
+}: {
+  windowWidth: number;
+  refImage: any;
+}) {
   const [imageIndex, setImageIndex] = useState<number | null>(null);
-  // useEffect(() => {
-  //   document.body.style.overflow = imageIndex == null ? "auto" : "hidden";
-  // }, [imageIndex]);
   return (
     <>
       <MainLayout className="gap-10">
-        <h1 className="latin-25">Memorable Moment</h1>
+        <h1 ref={refImage} className="latin-25">
+          Memorable Moment
+        </h1>
 
         <div className="flex flex-col gap-5 z-10">
           {IMAGES.map((image, i) => (

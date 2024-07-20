@@ -1,4 +1,5 @@
 import toast from "react-hot-toast";
+import Button from "../ui/button";
 
 export default function Bank({
   rek,
@@ -18,12 +19,9 @@ export default function Bank({
       <img className="max-w-[150px] w-full" src={image} alt="" />
       <p className="font-medium">{rek}</p>
       <p className="font-medium">{name}</p>
-      <button
-        onClick={copyToClipboard}
-        className="bg-purple-500 px-3 py-2 text-white rounded-full mt-5 z-10 hover:bg-purple-500/80"
-      >
-        Salin Nomer Rekening
-      </button>
+      <Button onClick={copyToClipboard} image="/icons/copy.png">
+        Salin No Rekening
+      </Button>
     </div>
   );
 }
