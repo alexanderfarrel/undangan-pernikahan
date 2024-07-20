@@ -15,6 +15,9 @@ function App() {
         <meta property="og:description" content="Deskripsi Website" />
         <meta property="og:image" content="./assets/formal-face.jpg" />
         <meta property="og:url" content="https://tinadewa.vercel.app" />
+        <meta http-equiv="cache-control" content="no-cache" />
+        <meta http-equiv="pragma" content="no-cache" />
+        <meta http-equiv="expires" content="0" />
       </Helmet>
       <Toaster reverseOrder={true} position="top-right" gutter={2} />
       <div
