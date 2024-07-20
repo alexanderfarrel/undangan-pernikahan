@@ -40,16 +40,13 @@ export default function Navbar({
           },
           "-=0.35"
         )
-        .from("#bgRounded", {
-          scale: 0,
-          ease: "circ",
-        })
+
         .from(
           "#location",
           {
             opacity: 0,
           },
-          "-=0.8"
+          "-=0.12"
         )
         .from(
           "#heart",
@@ -57,7 +54,7 @@ export default function Navbar({
             opacity: 0,
             x: 20,
           },
-          "-=0.6"
+          "-=0.4"
         )
         .from(
           "#image",
@@ -73,13 +70,21 @@ export default function Navbar({
             opacity: 0,
             x: 20,
           },
-          "-=0.4"
+          "-=0.3"
         )
         .from(
           "#comment",
           {
             opacity: 0,
             x: -20,
+          },
+          "<"
+        )
+        .from(
+          "#bgRounded",
+          {
+            scale: 0,
+            ease: "circ",
           },
           "<"
         );
