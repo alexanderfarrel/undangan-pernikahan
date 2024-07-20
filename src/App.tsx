@@ -4,13 +4,12 @@ import WelcomeView from "./templates/views/welcomeView";
 import MainView from "./templates/views/mainView";
 import { motion } from "framer-motion";
 import { Toaster } from "react-hot-toast";
-import { Helmet } from "react-helmet-async";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
-      <Helmet>
+      {/* <Helmet>
         <meta property="og:title" content="Judul 2 Website" />
         <meta property="og:description" content="Deskripsi Website" />
         <meta property="og:image" content="./assets/formal-face.jpg" />
@@ -18,7 +17,7 @@ function App() {
         <meta http-equiv="cache-control" content="no-cache" />
         <meta http-equiv="pragma" content="no-cache" />
         <meta http-equiv="expires" content="0" />
-      </Helmet>
+      </Helmet> */}
       <Toaster reverseOrder={true} position="top-right" gutter={2} />
       <div
         className={`relative w-full min-h-[100dvh] overflow-hidden flex flex-col items-center bg-black z-0`}
