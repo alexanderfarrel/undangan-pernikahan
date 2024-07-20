@@ -4,11 +4,21 @@ import WelcomeView from "./templates/views/welcomeView";
 import MainView from "./templates/views/mainView";
 import { motion } from "framer-motion";
 import { Toaster } from "react-hot-toast";
+import { Helmet } from "react-helmet-async";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
+      <Helmet>
+        <meta property="og:title" content="Judul Website" />
+        <meta property="og:description" content="Deskripsi Website" />
+        <meta
+          property="og:image"
+          content="https://i.ytimg.com/vi/IAgk5IP02Og/maxresdefault.jpg"
+        />
+        <meta property="og:url" content="https://tinadewa.vercel.app" />
+      </Helmet>
       <Toaster reverseOrder={true} position="top-right" gutter={2} />
       <div
         className={`relative w-full min-h-[100dvh] overflow-hidden flex flex-col items-center bg-black z-0`}
@@ -16,7 +26,10 @@ function App() {
         <motion.div
           initial={{ opacity: 1 }}
           animate={
-            isOpen && { opacity: 0, transition: { duration: 1.7, delay: 1.2 } }
+            isOpen && {
+              opacity: 0,
+              transition: { duration: 1.7, delay: 1.2 },
+            }
           }
           className="absolute top-0 left-0 w-full h-[100dvh] -z-10"
           style={{
