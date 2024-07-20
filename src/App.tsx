@@ -13,10 +13,7 @@ function App() {
       <Helmet>
         <meta property="og:title" content="Judul Website" />
         <meta property="og:description" content="Deskripsi Website" />
-        <meta
-          property="og:image"
-          content="https://i.ytimg.com/vi/IAgk5IP02Og/maxresdefault.jpg"
-        />
+        <meta property="og:image" content="/shiina.jpg" />
         <meta property="og:url" content="https://tinadewa.vercel.app" />
       </Helmet>
       <Toaster reverseOrder={true} position="top-right" gutter={2} />
