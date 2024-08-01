@@ -170,7 +170,7 @@ export default function Comment({
             id={comment?.id || ""}
             name={comment?.name || ""}
             comment={comment?.comment || ""}
-            date={comment?.created_at || 0}
+            date={comment?.update_at || 0}
             admin={name == "@tinadewa_admin"}
             user={name == comment?.name}
             handleDeleteComment={handleDeleteComment}
