@@ -78,7 +78,7 @@ export default function MainView({ isOpen }: { isOpen: Boolean }) {
             <Memorable windowWidth={windowWidth} refImage={refImage} />
             <Gift />
             <Rsvp name={name} />
-            <Comment refComment={refComment} />
+            <Comment refComment={refComment} name={name} />
             <EndFooter />
           </React.Fragment>
         )}
