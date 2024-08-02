@@ -62,7 +62,7 @@ export default function CommentBox({
   return (
     <div className="border-b p-2">
       <div className="flex justify-between">
-        <h1 className="font-medium text-sm">{name}</h1>
+        <h1 className="font-medium text-sm">{name.split("_").join(" ")}</h1>
         <p className="text-xs text-gray-500">{newDate}</p>
       </div>
       <div className="flex justify-between">

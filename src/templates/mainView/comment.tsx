@@ -132,7 +132,7 @@ export default function Comment({
   };
   return (
     <MainLayout height="h-full" className="gap-5">
-      <h1 ref={refComment} className="text-xl latin-25">
+      <h1 ref={refComment} className="text-xl latin-25 text-center">
         Kirim Ucapan & Doa Restu
       </h1>
       <form

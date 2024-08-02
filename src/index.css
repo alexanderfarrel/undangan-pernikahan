@@ -7,7 +7,7 @@
   stroke: #986a52;
   stroke-width: 0px;
   stroke-dasharray: 4500;
-  animation: draw 10s ease 1.3s forwards;
+  animation: draw 7s ease 1.5s forwards;
   max-width: 350px;
   width: 100%;
 }
@@ -28,7 +28,7 @@
   stroke-dasharray: 4500;
   width: 100%;
   max-width: 300px;
-  animation: draw 10s ease 1s forwards;
+  animation: draw 8s ease 1s forwards;
 }
 
 @keyframes draw {
@@ -91,9 +91,11 @@
   font-weight: 300;
   font-size: 20px;
   font-family: Playwrite BE VLG;
+  line-height: 1.5;
 }
 .latin-25 {
   font-weight: 300;
   font-size: 25px;
   font-family: Playwrite BE VLG;
+  line-height: 1.5;
 }
