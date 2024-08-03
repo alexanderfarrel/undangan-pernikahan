@@ -23,7 +23,19 @@ function App() {
                   content="The Wedding Of Tina and Dewa"
                 />
                 <meta property="og:description" content="2 February 2024" />
-                <meta property="og:image" content="/shiina.jpg" />
+                <meta
+                  property="og:image"
+                  content="https://www.motortrend.com/uploads/sites/5/2020/05/2020-Honda-Civic-Type-R-front-three-quarter-hero.jpg"
+                />
+                <meta
+                  property="og:image:alt"
+                  content="The image is an image of the car"
+                />
+                <meta property="og:image:type" content="image/jpg" />
+                <meta property="og:image:width" content="1200" />
+                <meta property="og:image:height" content="630" />
+                <meta property="og:type" content="website" />
+                <meta property="og:site_name" content="Tina & Dewa" />
                 <meta property="og:url" content="https://tinadewa.vercel.app" />
                 <meta http-equiv="cache-control" content="no-cache" />
                 <meta http-equiv="pragma" content="no-cache" />
@@ -38,7 +50,7 @@ function App() {
                   animate={
                     isOpen && {
                       opacity: 0,
-                      transition: { duration: 1.7, delay: 1.2 },
+                      transition: { duration: 1.7, delay: 1.2 }, //1.2
                     }
                   }
                   className="absolute top-0 left-0 w-full h-[100dvh] -z-10"

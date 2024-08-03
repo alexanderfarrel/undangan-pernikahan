@@ -47,7 +47,7 @@ export default function Modal({
         clearTimeout(timeoutRef.current);
       }
     };
-  }, [closed, handleClose, onClose]);
+  }, [closed, handleClose]);
   return (
     <motion.div
       initial={{ opacity: 0 }}

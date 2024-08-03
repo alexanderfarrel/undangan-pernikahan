@@ -22,7 +22,9 @@ export default function Rsvp({ name }: { name: string }) {
           Isi Konfirmasi Kehadiran
         </button>
       </MainLayout>
-      {isModalOpen && <ModalRsvp setIsModalOpen={setIsModalOpen} name={name} />}
+      {isModalOpen && (
+        <ModalRsvp setIsModalOpen={setIsModalOpen} username={name} />
+      )}
     </>
   );
 }

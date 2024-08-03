@@ -43,7 +43,7 @@ export default function MainView({ isOpen }: { isOpen: Boolean }) {
           isOpen && {
             opacity: 1,
             display: "block",
-            transition: { duration: 0.5, opacity: { delay: 1.2 } },
+            transition: { duration: 0.5, opacity: { delay: 1.2 } }, //1.2
           }
         }
         className="max-w-xl w-full h-full opacity-0"
