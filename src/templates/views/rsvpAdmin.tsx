@@ -63,7 +63,9 @@ export default function RsvpAdmin() {
         />
         <div className="overflow-y-scroll comment-scrollbar w-full h-full flex flex-col gap-2 px-2">
           {rsvpData
-            .filter((data) => data.name.includes(search))
+            .filter((data) =>
+              data.name.toLowerCase().includes(search.toLowerCase())
+            )
             .map((data: rsvp) => (
               <RsvpBox key={data.id} data={data} search={search} />
             ))}

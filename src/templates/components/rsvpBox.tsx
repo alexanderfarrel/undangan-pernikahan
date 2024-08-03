@@ -47,17 +47,12 @@ export default function RsvpBox({
               minHeight: "35px",
             }
       }
-      className={`flex justify-between p-1 px-3 rounded-lg bg-gray-200 cursor-pointer overflow-hidden`}
+      className={`flex flex-col gap-1 p-1 px-3 rounded-lg bg-gray-200 cursor-pointer overflow-hidden`}
       key={data.id}
     >
-      <div className="flex flex-col gap-1">
-        <h1 className="font-medium">{data.name}</h1>
-        <h1>Email</h1>
-        <h1>Telepon</h1>
-        <h1>Jumlah</h1>
-        {data.keterangan && <h1>Keterangan</h1>}
-      </div>
-      <div className="text-end flex flex-col gap-1">
+      <div className="flex justify-between w-full">
+        {" "}
+        <h1 className="font-medium">{data.name}</h1>{" "}
         <p
           className={`font-medium ${
             data.presence ? "text-green-500" : "text-red-500"
@@ -65,11 +60,27 @@ export default function RsvpBox({
         >
           {data.presence ? "Hadir" : "Tidak Hadir"}
         </p>
-        <p>{data.email}</p>
-        <p>{data.telepon}</p>
-        <p>{data.jumlah}</p>
-        {data.keterangan && <p>{data.keterangan}</p>}
       </div>
+      <div className="flex justify-between w-full">
+        <h1>Email</h1>
+        <p className="font-medium max-w-[150px] break-words">{data.email}</p>
+      </div>
+      <div className="flex justify-between w-full">
+        <h1>Telepon</h1>
+        <p className="font-medium max-w-[150px] break-words">{data.telepon}</p>
+      </div>
+      <div className="flex justify-between w-full">
+        <h1>Jumlah</h1>
+        <p className="font-medium max-w-[150px]">{data.jumlah}</p>
+      </div>
+      {data.keterangan && (
+        <div className="flex justify-between w-full">
+          <h1>Keterangan</h1>
+          <p className="font-medium max-w-[150px] break-words">
+            {data.keterangan}
+          </p>
+        </div>
+      )}
     </motion.div>
   );
 }
