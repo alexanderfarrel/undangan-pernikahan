@@ -155,7 +155,7 @@ export default function Comment({
           name="comment"
           type="text"
           placeholder="Tulis ucapan & doa restu"
-          disabled={name == "@tinadewa_admin"}
+          disabled={name == "@tinandewa_admin"}
           className="border p-2 bg-gray-200 outline-none"
         />
         <button
@@ -173,7 +173,7 @@ export default function Comment({
             name={comment?.name || ""}
             comment={comment?.comment || ""}
             date={comment?.update_at || 0}
-            admin={name == "@tinadewa_admin"}
+            admin={name == "@tinandewa_admin"}
             user={name == comment?.name}
             handleDeleteComment={handleDeleteComment}
             getComments={getComments}
