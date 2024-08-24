@@ -53,9 +53,10 @@ export default function MainView({ isOpen }: { isOpen: Boolean }) {
           <div
             className="w-full max-w-xl h-[112vh] -z-10"
             style={{
-              backgroundImage: "url('/shiina.jpg')",
+              backgroundImage: "url('/images/welcome.jpg')",
               backgroundRepeat: "no-repeat",
               backgroundPosition: "center",
+              backgroundPositionX: "46%",
               backgroundSize: "cover",
               filter: "brightness(0.3)",
             }}

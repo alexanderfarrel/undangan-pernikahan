@@ -147,7 +147,7 @@ export default function Comment({
           defaultValue={name}
           disabled
           readOnly
-          className="border p-2 bg-gray-200"
+          className="border p-2 bg-gray-200 capitalize"
         />
         <input
           name="comment"

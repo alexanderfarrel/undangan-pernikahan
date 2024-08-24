@@ -34,7 +34,7 @@ export default function ProfileCard({
           animate={isImageInVIew ? { opacity: 1 } : { opacity: 0 }}
           className="w-full h-full rounded-full"
           style={{
-            backgroundImage: "url('/formal-face.jpg')",
+            backgroundImage: "url('/images/welcome.jpg')",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
             backgroundSize: "cover",

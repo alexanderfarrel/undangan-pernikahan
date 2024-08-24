@@ -50,12 +50,13 @@ function App() {
                   animate={
                     isOpen && {
                       opacity: 0,
+                      // transition: { duration: 0 },
                       transition: { duration: 1.7, delay: 1.2 }, //1.2
                     }
                   }
-                  className="absolute top-0 left-0 w-full h-[100dvh] -z-10"
+                  className="absolute top-0 left-0 w-[110dvw] h-[100dvh] -z-10"
                   style={{
-                    backgroundImage: "url('/formal-face.jpg')",
+                    backgroundImage: "url('/images/welcome.jpg')",
                     backgroundRepeat: "no-repeat",
                     backgroundPosition: "center",
                     backgroundSize: "cover",

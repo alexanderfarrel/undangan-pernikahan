@@ -65,14 +65,14 @@ export default function CommentBox({
         <h1 className="font-medium text-sm">{name.split("_").join(" ")}</h1>
         <p className="text-xs text-gray-500">{newDate}</p>
       </div>
-      <div className="flex justify-between">
+      <div className="flex justify-between gap-3">
         {edit ? (
           <input
             id="newComment"
             type="text"
             defaultValue={comment}
             onChange={(e) => setNewComment(e.target.value)}
-            className="text-sm text-gray-500 font-[400] bg-gray-100 px-2 py-1 rounded-lg outline-none"
+            className="text-sm text-gray-500 font-[400] bg-gray-100 px-2 py-1 rounded-lg outline-none w-full"
           />
         ) : (
           <p className="text-sm text-gray-500 font-[400]">{comment}</p>

@@ -47,14 +47,18 @@ export default function WelcomeView({
               transition: { duration: 0.5, delay: 0.2 },
             }
           }
-          className="w-44 h-44 rounded-full"
-          style={{
-            backgroundImage: "url('/formal-face.jpg')",
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "center",
-            backgroundSize: "cover",
-          }}
-        />
+          className="w-44 h-44 rounded-full overflow-hidden relative"
+        >
+          <motion.div
+            className="w-[110%] h-full absolute top-0 left-0"
+            style={{
+              backgroundImage: "url('/images/welcome.jpg')",
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "center",
+              backgroundSize: "cover",
+            }}
+          ></motion.div>
+        </motion.div>
         <motion.div
           animate={
             isOpen && {
