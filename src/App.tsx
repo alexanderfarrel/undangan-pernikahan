@@ -22,21 +22,21 @@ function App() {
                   property="og:title"
                   content="The Wedding Of Tina and Dewa"
                 />
-                <meta property="og:description" content="2 February 2024" />
-                <meta
-                  property="og:image"
-                  content="https://www.motortrend.com/uploads/sites/5/2020/05/2020-Honda-Civic-Type-R-front-three-quarter-hero.jpg"
-                />
+                <meta property="og:description" content="19 Oktober 2024" />
+                <meta property="og:image" content="/images/welcome.jpg" />
                 <meta
                   property="og:image:alt"
-                  content="The image is an image of the car"
+                  content="The image is an image of the bride"
                 />
                 <meta property="og:image:type" content="image/jpg" />
-                <meta property="og:image:width" content="1200" />
-                <meta property="og:image:height" content="630" />
+                <meta property="og:image:width" content="1920" />
+                <meta property="og:image:height" content="1080" />
                 <meta property="og:type" content="website" />
                 <meta property="og:site_name" content="Tina & Dewa" />
-                <meta property="og:url" content="https://tinadewa.vercel.app" />
+                <meta
+                  property="og:url"
+                  content="https://tinandewa.vercel.app/"
+                />
                 <meta http-equiv="cache-control" content="no-cache" />
                 <meta http-equiv="pragma" content="no-cache" />
                 <meta http-equiv="expires" content="0" />
