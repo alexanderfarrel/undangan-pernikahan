@@ -29,7 +29,7 @@ function App() {
                   content="The image is an image of the bride"
                 />
                 <meta property="og:image:type" content="image/jpg" />
-                <meta property="og:image:width" content="1920" />
+                <meta property="og:image:width" content="1080" />
                 <meta property="og:image:height" content="1080" />
                 <meta property="og:type" content="website" />
                 <meta property="og:site_name" content="Tina & Dewa" />

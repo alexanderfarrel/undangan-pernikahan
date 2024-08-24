@@ -37,7 +37,7 @@ export default function Memorable({
   return (
     <>
       <MainLayout className="gap-10">
-        <h1 ref={refImage} className="latin-25">
+        <h1 ref={refImage} className="latin-25 text-center">
           Memorable Moment
         </h1>
 
