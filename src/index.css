@@ -49,7 +49,7 @@
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  @apply bg-purple-400;
+  @apply bg-blue-300;
 }
 ::-webkit-scrollbar-thumb {
   @apply bg-white rounded-full;
@@ -63,7 +63,7 @@
   @apply bg-white;
 }
 .comment-scrollbar::-webkit-scrollbar-thumb {
-  @apply bg-purple-400;
+  @apply bg-blue-300;
 }
 
 .hidden-scrollbar {
@@ -83,21 +83,26 @@
 }
 
 @font-face {
-  font-family: Playwrite BE VLG;
-  src: url(/fonts/PlaywriteBEVLG-VariableFont_wght.ttf);
+  font-family: GreatVibes-Regular;
+  src: url(/fonts/GreatVibes-Regular.ttf);
+}
+
+html,
+body {
+  font-family: "Comic Neue", cursive;
 }
 
 .latin-20 {
   font-weight: 300;
-  font-size: 20px;
-  font-family: Playwrite BE VLG;
-  line-height: 1.5;
+  font-size: 40px;
+  font-family: GreatVibes-Regular;
+  line-height: 1.2;
 }
 .latin-25 {
   font-weight: 300;
-  font-size: 25px;
-  font-family: Playwrite BE VLG;
-  line-height: 1.5;
+  font-size: 45px;
+  font-family: GreatVibes-Regular;
+  line-height: 1.2;
 }
 
 /* For Chrome, Safari, Edge, and Opera */

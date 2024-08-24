@@ -7,7 +7,7 @@ export default function Wave() {
       x="0px"
       y="0px"
       viewBox="0 0 1440 178.3"
-      fill="rgb(192 132 252)"
+      fill="rgb(147 197 253)"
       className="absolute z-20 top-0 min-h-[4.5rem]"
     >
       <path

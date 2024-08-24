@@ -12,11 +12,11 @@ export default function LocationCard({
   location: string;
 }) {
   return (
-    <div className="shadow-custom p-4 flex flex-col gap-3 text-center max-w-[350px]">
+    <div className="shadow-custom p-4 flex flex-col gap-2 text-center max-w-[350px]">
       <h1 className="latin-20">{title}</h1>
       <p>{date}</p>
       <p>{time}</p>
-      <h2 className="font-medium">Lokasi / Tempat Acara:</h2>
+      <h2 className="font-bold">Lokasi / Tempat Acara:</h2>
       <p className="-mb-3">{home}</p>
       <p className="leading-6">{location}</p>
     </div>

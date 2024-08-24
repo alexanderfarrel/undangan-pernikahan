@@ -144,7 +144,7 @@ export default function Navbar({
       <div id="parentRounded" className="w-full h-full absolute rounded-full">
         <div
           id="rounded"
-          className="absolute w-full h-full bg-purple-400 rounded-full overflow-hidden"
+          className="absolute w-full h-full bg-blue-400 rounded-full overflow-hidden"
           style={{ clipPath: "circle(13px at 50% 50%)" }}
         />
       </div>
@@ -152,7 +152,7 @@ export default function Navbar({
         id="bgRounded"
         initial={{ clipPath: "circle(0px at 50% 50%)" }}
         animate={{ clipPath: `circle(22px at ${xPosition}% 50%)` }}
-        className="w-full h-full absolute bg-purple-600 opacity-100"
+        className="w-full h-full absolute bg-blue-500 opacity-100"
       />
       <Home onClick={() => handleScroll("home")} />
       <Heart onClick={() => handleScroll("bride")} />

@@ -37,6 +37,7 @@ export default function ProfileCard({
             backgroundImage: "url('/images/welcome.jpg')",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
+            backgroundPositionX: "38%",
             backgroundSize: "cover",
           }}
         />

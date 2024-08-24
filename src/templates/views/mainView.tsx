@@ -35,6 +35,21 @@ export default function MainView({ isOpen }: { isOpen: Boolean }) {
     }
   }, [isOpen]);
 
+  const audio = useRef<HTMLAudioElement>(null);
+  const [isPlaying, setIsPlaying] = useState(true);
+
+  const handleAudio = () => {
+    if (audio.current) {
+      if (audio.current.paused) {
+        audio.current.play();
+        setIsPlaying(true);
+      } else {
+        audio.current.pause();
+        setIsPlaying(false);
+      }
+    }
+  };
+
   return (
     <React.Fragment>
       <motion.div
@@ -43,12 +58,12 @@ export default function MainView({ isOpen }: { isOpen: Boolean }) {
           isOpen && {
             opacity: 1,
             display: "block",
-            transition: { duration: 0.5, opacity: { delay: 1.2 } }, //1.2
+            transition: { duration: 0.5, opacity: { delay: 0 } }, //1.2
           }
         }
         className="max-w-xl w-full h-full opacity-0"
       >
-        <div className="absolute w-full h-full left-0 top-0 bg-purple-400 -z-10" />
+        <div className="absolute w-full h-full left-0 top-0 bg-blue-300 -z-10" />
         <div className="absolute w-full h-full left-0 top-0 flex justify-center">
           <div
             className="w-full max-w-xl h-[112vh] -z-10"
@@ -65,6 +80,16 @@ export default function MainView({ isOpen }: { isOpen: Boolean }) {
         {/* WELCOME */}
         {isOpen && (
           <React.Fragment>
+            <button
+              onClick={handleAudio}
+              className="fixed right-0 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white text-blue-400 shadow-xl outline-none p-2"
+            >
+              {isPlaying ? (
+                <img src="/icons/pause.png" alt="" className="w-full h-full" />
+              ) : (
+                <img src="/icons/play.png" alt="" className="w-full h-full" />
+              )}
+            </button>
             <Navbar
               refHome={refHome}
               refBride={refBride}
@@ -81,6 +106,14 @@ export default function MainView({ isOpen }: { isOpen: Boolean }) {
             <Rsvp name={name} />
             <Comment refComment={refComment} name={name} />
             <EndFooter />
+            <audio
+              ref={audio}
+              src="/audio/Alan-Walker-Different-World-feat-Sofia-Carson-K-391-CORSAK-Lyric-Video_m-PJmmvyP10.mp3"
+              autoPlay
+              loop
+            >
+              Your browser does not support the audio element.
+            </audio>
           </React.Fragment>
         )}
       </motion.div>

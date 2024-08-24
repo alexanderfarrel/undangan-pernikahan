@@ -169,14 +169,14 @@ dan Ibu Siti Sofiyah, S.Pd.I."
                 "_blank"
               );
             }}
-            className={`relative bg-purple-500 px-4 py-3 text-white rounded-full flex items-center justify-center gap-2 self-center ${
+            className={`relative bg-blue-400 px-4 py-3 text-white rounded-full flex items-center justify-center gap-2 self-center hover:bg-blue-400/80 ${
               windowWidth < 500 && "text-[13px]"
             } cursor-pointer z-20 overflow-hidden`}
           >
             <motion.div
               animate={button.isVisible ? { scaleX: 0 } : { scaleX: 1 }}
               transition={{ duration: 0.5 }}
-              className="absolute top-0 left-0 w-full h-full rounded-full bg-purple-500 origin-right"
+              className="absolute top-0 left-0 w-full h-full rounded-full bg-blue-400 origin-right"
             />
             <img src="/calendar.png" alt="" className="max-w-[20px]" />
             Ingatkan Via Google kalender

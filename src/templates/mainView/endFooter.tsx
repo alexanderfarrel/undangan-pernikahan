@@ -3,9 +3,10 @@ import MainLayout from "../components/mainLayout";
 export default function EndFooter() {
   return (
     <MainLayout
-      backgroundColor="bg-purple-400"
+      backgroundColor="bg-blue-300"
       className="py-10 pb-16"
       height="h-full"
+      flower={false}
     >
       <h1 className="font-medium text-white">Dibuat Dengan Sepenuh Hati ❤️</h1>
       <p

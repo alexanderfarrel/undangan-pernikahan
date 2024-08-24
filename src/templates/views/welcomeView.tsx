@@ -122,7 +122,7 @@ export default function WelcomeView({
             isOpen && { opacity: 0, y: 30, transition: { duration: 0.5 } }
           }
           onClick={handleClick}
-          className={`p-[6px] px-4 bg-purple-400 text-white rounded-full mt-2 ${
+          className={`p-[6px] px-4 bg-blue-400 text-white rounded-full mt-2 hover:bg-blue-400/80 ${
             windowWidth < 500 && "text-xs"
           }`}
         >

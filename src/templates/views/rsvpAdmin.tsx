@@ -52,7 +52,7 @@ export default function RsvpAdmin() {
   };
 
   return (
-    <div className="bg-purple-600 h-screen flex w-full items-center justify-center">
+    <div className="bg-blue-400 h-screen flex w-full items-center justify-center">
       <div className="bg-white rounded-xl w-full max-w-xl h-full max-h-[500px] p-3 m-5 flex flex-col gap-3">
         <h1 className="font-bold text-center text-xl">Daftar Hadir</h1>
         <input

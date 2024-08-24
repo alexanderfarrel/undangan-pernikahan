@@ -64,15 +64,17 @@ export default function Comment({
       (target.elements.namedItem("comment") as HTMLInputElement)?.value || "";
 
     if (formName === "") {
-      return alert("Gunakan nama dari link yang telah dikirim oleh admin");
+      return toast.error(
+        "Gunakan nama dari link yang telah dikirim oleh admin"
+      );
     }
 
     if (formName !== name) {
-      return alert("Gunakan link yang telah dikirim oleh admin");
+      return toast.error("Gunakan link yang telah dikirim oleh admin");
     }
 
     if (comment === "") {
-      return alert("Tolong tuliskan ucapan dan doa restu Anda");
+      return toast.error("Tolong tuliskan ucapan dan doa restu Anda");
     }
 
     const userCommented = comments.some(
@@ -80,7 +82,7 @@ export default function Comment({
     );
 
     if (userCommented) {
-      return alert("Anda sudah memberikan ucapan dan doa restu");
+      return toast.error("Anda sudah memberikan ucapan dan doa restu");
     }
 
     setComments([
@@ -100,7 +102,7 @@ export default function Comment({
     );
 
     if (userCommented) {
-      return alert("Anda sudah memberikan ucapan dan doa restu");
+      return toast.error("Anda sudah memberikan ucapan dan doa restu");
     }
 
     try {
@@ -158,12 +160,12 @@ export default function Comment({
         />
         <button
           type="submit"
-          className="bg-purple-500 px-3 py-2 text-white rounded-full"
+          className="bg-blue-400 px-3 py-2 text-white rounded-full"
         >
           Kirim
         </button>
       </form>
-      <div className="max-h-[200px] overflow-y-scroll comment-scrollbar z-10 w-full">
+      <div className="max-h-[180px] bg-white overflow-y-scroll comment-scrollbar z-10 w-full">
         {comments?.map((comment) => (
           <CommentBox
             key={comment.id}

@@ -221,7 +221,7 @@ export default function ModalRsvp({
           <button
             onClick={() => handleButtonClick()}
             disabled={close}
-            className="bg-purple-500 px-3 py-1 text-white rounded-xl mt-3"
+            className="bg-blue-400 px-3 py-1 text-white rounded-xl mt-3"
           >
             Konfirm
           </button>

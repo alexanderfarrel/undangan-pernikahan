@@ -234,7 +234,7 @@ const FullImageFooter = ({
           <div
             key={i}
             className={`w-24 h-24 overflow-hidden rounded-lg border-2 ${
-              imageIndex == i ? "border-purple-500" : "border-white"
+              imageIndex == i ? "border-blue-400" : "border-white"
             } transition-all duration-500 shrink-0`}
           >
             <img

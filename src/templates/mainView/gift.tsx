@@ -25,7 +25,7 @@ export default function Gift() {
         alt=""
         className="w-full max-w-[150px]"
       />
-      <div className="font-medium">
+      <div className="font-medium z-10">
         <p>Alamat Pengiriman Kado :</p>
         <p>
           Gesty wijining Tyas (08818592509) Jl.Pramuka Desa Kedungwringin

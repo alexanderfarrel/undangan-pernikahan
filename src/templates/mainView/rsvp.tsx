@@ -17,7 +17,7 @@ export default function Rsvp({ name }: { name: string }) {
         <button
           disabled={isModalOpen}
           onClick={() => setIsModalOpen(true)}
-          className="bg-purple-500 px-3 py-2 text-white rounded-full z-10 hover:bg-purple-500/80"
+          className="bg-blue-400 px-3 py-2 text-white rounded-full z-10 hover:bg-blue-400/80"
         >
           Isi Konfirmasi Kehadiran
         </button>
