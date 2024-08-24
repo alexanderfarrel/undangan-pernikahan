@@ -82,7 +82,7 @@ export default function MainView({ isOpen }: { isOpen: Boolean }) {
           <React.Fragment>
             <button
               onClick={handleAudio}
-              className="fixed right-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white text-blue-400 shadow-xl outline-none p-2"
+              className="fixed right-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white text-blue-400 shadow-xl outline-none p-2 z-10"
             >
               {isPlaying ? (
                 <img src="/icons/pause.png" alt="" className="w-full h-full" />
