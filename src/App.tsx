@@ -23,11 +23,11 @@ function App() {
                   content="The Wedding Of Tina and Dewa"
                 />
                 <meta property="og:description" content="19 Oktober 2024" />
+                <meta property="og:image" content="/images/welcome.jpg" />
                 <meta
                   property="og:image"
                   content="https://firebasestorage.googleapis.com/v0/b/tinadewatest.appspot.com/o/welcome.jpg?alt=media&token=0a31ad8b-275d-4488-b0a7-248c6adc9245"
                 />
-                <meta property="og:image" content="/images/welcome.jpg" />
                 <meta
                   property="og:image:alt"
                   content="The image is an image of the bride"
