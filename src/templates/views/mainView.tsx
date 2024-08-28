@@ -13,7 +13,13 @@ import Comment from "../mainView/comment";
 import EndFooter from "../mainView/endFooter";
 import Navbar from "./navbar";
 
-export default function MainView({ isOpen }: { isOpen: Boolean }) {
+export default function MainView({
+  isOpen,
+  audio,
+}: {
+  isOpen: Boolean;
+  audio: any;
+}) {
   const windowWidth = useWindowWidth();
 
   const refHome = useRef(null);
@@ -35,7 +41,6 @@ export default function MainView({ isOpen }: { isOpen: Boolean }) {
     }
   }, [isOpen]);
 
-  const audio = useRef<HTMLAudioElement>(null);
   const [isPlaying, setIsPlaying] = useState(true);
 
   const handleAudio = () => {
@@ -50,6 +55,23 @@ export default function MainView({ isOpen }: { isOpen: Boolean }) {
     }
   };
 
+  useEffect(() => {
+    const Audio = audio.current;
+
+    if (!Audio) {
+      return;
+    }
+    Audio.play();
+    audio.current.play();
+    // Menunggu Audio siap diputar
+    Audio.addEventListener("canplaythrough", () => {
+      // Memastikan Audio diputar
+      Audio.play().catch((error: any) => {
+        console.error("Autoplay gagal:", error);
+      });
+    });
+  }, []);
+
   return (
     <React.Fragment>
       <motion.div
@@ -58,7 +80,7 @@ export default function MainView({ isOpen }: { isOpen: Boolean }) {
           isOpen && {
             opacity: 1,
             display: "block",
-            transition: { duration: 0.5, opacity: { delay: 0 } }, //1.2
+            transition: { duration: 0.5, opacity: { delay: 1.2 } }, //1.2
           }
         }
         className="max-w-xl w-full h-full opacity-0"
@@ -106,14 +128,6 @@ export default function MainView({ isOpen }: { isOpen: Boolean }) {
             <Rsvp name={name} />
             <Comment refComment={refComment} name={name} />
             <EndFooter />
-            <audio
-              ref={audio}
-              src="/audio/Alan-Walker-Different-World-feat-Sofia-Carson-K-391-CORSAK-Lyric-Video_m-PJmmvyP10.mp3"
-              autoPlay
-              loop
-            >
-              Your browser does not support the audio element.
-            </audio>
           </React.Fragment>
         )}
       </motion.div>

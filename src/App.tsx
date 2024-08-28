@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import MainView from "./templates/views/mainView";
 import { motion } from "framer-motion";
 import { Toaster } from "react-hot-toast";
@@ -10,6 +10,12 @@ import RsvpAdmin from "./templates/views/rsvpAdmin";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
+
+  const audio = useRef<HTMLAudioElement>(null);
+
+  useEffect(() => {
+    audio?.current?.pause();
+  }, []);
   return (
     <Router>
       <Routes>
@@ -67,10 +73,18 @@ function App() {
                     filter: "brightness(0.3)",
                   }}
                 />
-                <MainView isOpen={isOpen} />
+                <MainView isOpen={isOpen} audio={audio} />
                 <WelcomeView setIsOpen={setIsOpen} isOpen={isOpen} />
                 <IntroView />
               </div>
+              <audio
+                ref={audio}
+                id="audio"
+                src="/audio/Alan-Walker-Different-World-feat-Sofia-Carson-K-391-CORSAK-Lyric-Video_m-PJmmvyP10.mp3"
+                loop
+              >
+                Your browser does not support the audio element.
+              </audio>
             </>
           }
         />
