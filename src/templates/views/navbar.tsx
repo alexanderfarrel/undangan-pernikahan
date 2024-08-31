@@ -1,6 +1,5 @@
 import { useEffect, useLayoutEffect, useState } from "react";
 import Image from "../navbar/image";
-import Comment from "../navbar/comment";
 import Heart from "../navbar/heart";
 import Location from "../navbar/location";
 import Home from "../navbar/home";
