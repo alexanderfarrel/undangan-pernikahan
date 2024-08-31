@@ -124,9 +124,9 @@ export default function MainView({
             <Location refLocation={refLocation} />
             <Doa />
             <Memorable windowWidth={windowWidth} refImage={refImage} />
-            <Gift />
-            <Rsvp name={name} />
-            <Comment refComment={refComment} name={name} />
+            {/* <Gift /> */}
+            {/* <Rsvp name={name} /> */}
+            {/* <Comment refComment={refComment} name={name} /> */}
             <EndFooter />
           </React.Fragment>
         )}

@@ -74,13 +74,17 @@ function App() {
                   }}
                 />
                 <MainView isOpen={isOpen} audio={audio} />
-                <WelcomeView setIsOpen={setIsOpen} isOpen={isOpen} />
+                <WelcomeView
+                  setIsOpen={setIsOpen}
+                  isOpen={isOpen}
+                  audio={audio}
+                />
                 <IntroView />
               </div>
               <audio
                 ref={audio}
                 id="audio"
-                src="/audio/Alan-Walker-Different-World-feat-Sofia-Carson-K-391-CORSAK-Lyric-Video_m-PJmmvyP10.mp3"
+                src="/audio/Shane Filan - Beautiful In White (Official Video).mp3"
                 loop
               >
                 Your browser does not support the audio element.

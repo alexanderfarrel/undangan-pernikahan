@@ -8,9 +8,11 @@ import useWindowWidth from "../../services/hooks/useWindowWidth";
 export default function WelcomeView({
   setIsOpen,
   isOpen,
+  audio,
 }: {
   isOpen: boolean;
   setIsOpen: (boolean: boolean) => void;
+  audio: any;
 }) {
   const windowWidth = useWindowWidth();
   const [name, setName] = useState("");
@@ -21,6 +23,7 @@ export default function WelcomeView({
   }, []);
 
   const handleClick = () => {
+    audio.current.play();
     setIsOpen(true);
   };
   return (

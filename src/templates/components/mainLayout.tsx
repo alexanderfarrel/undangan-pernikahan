@@ -20,6 +20,16 @@ export default function MainLayout({
       {flower && (
         <div className={`w-full h-full overflow-hidden absolute z-0`}>
           <img
+            src="/images/bercak2.png"
+            alt=""
+            className="absolute -left-56 top-1/2 opacity-20"
+          />
+          <img
+            src="/images/bercak2.png"
+            alt=""
+            className="absolute -right-48 top-[15%] opacity-20"
+          />
+          <img
             src="/images/bunga3.png"
             alt=""
             className="absolute -top-9 -left-5 w-[60dvw] max-w-64 z-0"

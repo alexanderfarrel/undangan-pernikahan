@@ -18,7 +18,7 @@ export default function CountdownCard({
     >
       <motion.div
         animate={isInView ? { scaleY: 0 } : { scaleY: 1 }}
-        transition={{ duration: 0.5, delay }}
+        transition={{ duration: 0.7, delay }}
         className="absolute w-full h-full bg-white top-0 left-0 origin-top"
       />
       <p className="text-xl font-medium">{num}</p>

@@ -27,11 +27,11 @@ export default function Opening({ refHome }: { refHome: any }) {
             className="text-center border-r border-l border-gray-200/70 p-3 py-2"
           >
             <h1 id="date" className="text-3xl">
-              04
+              19
             </h1>
             <p id="year">2024</p>
           </div>
-          <p id="month">Februari</p>
+          <p id="month">Oktober</p>
         </div>
       </main>
     </section>

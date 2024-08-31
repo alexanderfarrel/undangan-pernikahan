@@ -46,18 +46,20 @@ export default function ProfileCard({
         {name}{" "}
         <motion.span
           animate={isNameInVIew ? { scaleX: 0 } : { scaleX: 1 }}
-          transition={{ type: "tween", duration: 0.4 }}
-          className="bg-white absolute top-0 left-0 w-full h-full origin-left"
+          transition={{ type: "tween", duration: 0.5 }}
+          className="bg-white absolute top-0 left-0 w-full h-full origin-right"
         />
       </h1>
-      <motion.img
-        ref={refFlower}
-        transition={{ duration: 0.5 }}
-        animate={isFlowerInVIew ? { opacity: 1 } : { opacity: 0 }}
-        src="https://app.sangmempelai.id/webview/template/front/div/wavy-sfe-04.png"
-        alt=""
-        className="max-w-[150px] w-full"
-      />
+      <div className="relative max-w-[130px] h-7 w-full">
+        <motion.img
+          ref={refFlower}
+          transition={{ duration: 0.5 }}
+          animate={isFlowerInVIew ? { opacity: 1 } : { opacity: 0 }}
+          src="/images/undername.png"
+          alt=""
+          className="max-w-[130px] w-full absolute -top-6"
+        />
+      </div>
       <footer className="max-w-[200px]">
         <motion.p
           ref={refDesc}

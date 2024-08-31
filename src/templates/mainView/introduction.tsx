@@ -4,6 +4,7 @@ import ProfileCard from "../components/profileCard";
 import MainLayout from "../components/mainLayout";
 import { motion } from "framer-motion";
 import useVisibility from "../../services/hooks/useVisibility";
+import ButtonAnimate from "../ui/buttonAnimate";
 
 export default function Introduction({
   windowWidth,
@@ -19,7 +20,7 @@ export default function Introduction({
     seconds: 0,
   });
 
-  const countdownDate = new Date("Jan 1, 2025 00:00:00").getTime();
+  const countdownDate = new Date("October 19, 2024 00:00:00").getTime();
 
   const interval = setInterval(() => {
     const now = new Date().getTime();
@@ -73,7 +74,7 @@ export default function Introduction({
             duration: 0.7,
             type: "tween",
           }}
-          className="absolute w-full h-20 bg-white origin-left"
+          className="absolute w-full h-20 bg-white origin-right"
         />
         <img src="/bismillah.png" alt="bismillah" />
       </div>
@@ -108,10 +109,8 @@ export default function Introduction({
           isFlowerInVIew={flower1.isVisible}
           refDesc={desc1.ref}
           isDescInVIew={desc1.isVisible}
-          name="Agustina Tari"
-          desc="Putra ketiga dari
-        Bapak Supriyono, S.Pd.SD.
-        dan Ibu Siti Sofiyah, S.Pd.I."
+          name="Agustina Untari"
+          desc="Putri kedua dari bapak nasikin dan ibu warsinem"
         />
         <ProfileCard
           refImage={profileCard2.ref}
@@ -122,19 +121,17 @@ export default function Introduction({
           isFlowerInVIew={flower2.isVisible}
           refDesc={desc2.ref}
           isDescInVIew={desc2.isVisible}
-          name="Nadiwa Hasby"
-          desc="Putra ketiga dari
-Bapak Supriyono, S.Pd.SD.
-dan Ibu Siti Sofiyah, S.Pd.I."
+          name="Nadiwa Hasby N"
+          desc="Putra pertama dari bapak gunawan dan ibu murdiyani"
         />
         <footer className="mx-5 mt-10 flex flex-col gap-10">
           <motion.p
             ref={text3.ref}
             animate={text3.isVisible ? { opacity: 1 } : { opacity: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.7 }}
             className="text-gray-500"
           >
-            Sabtu, 04 Februari 2024
+            Sabtu, 19 Oktober 2024
           </motion.p>
           <div ref={countdown.ref} className="flex gap-3 justify-center">
             <CountdownCard
@@ -161,26 +158,19 @@ dan Ibu Siti Sofiyah, S.Pd.I."
               delay={0.6}
             />
           </div>
-          <button
-            ref={button.ref}
+          <ButtonAnimate
+            button={button}
+            windowWidth={windowWidth}
+            img="/calendar.png"
             onClick={() => {
               window.open(
-                "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NGJ2MXVibHQ2N2xuMTBwYzF0N3RjaWFoMzQgMTU5MmJjYjFiNjc5MjQxMjJhZmZmMDVmNjk3YzQ5ZjA2YzFiNzEzMzVjZjBiMDBjMjVmYTBhNDk0MzExNmI0OUBn&tmsrc=1592bcb1b67924122afff05f697c49f06c1b71335cf0b00c25fa0a4943116b49%40group.calendar.google.com",
+                "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NHZiNmNuaWc1ZWR2bTUxa25xcmxuZ3U0NTAgNjY1MDdmMTgzMzU2YjJmMmE0YzQ2YTFlOWJmMjg4YmJmZDI2MDMxYTg1Mjg0NWY3MGZiNmI1NTliOTI4OTEyZUBn&tmsrc=66507f183356b2f2a4c46a1e9bf288bbfd26031a852845f70fb6b559b928912e%40group.calendar.google.com",
                 "_blank"
               );
             }}
-            className={`relative bg-blue-400 px-4 py-3 text-white rounded-full flex items-center justify-center gap-2 self-center hover:bg-blue-400/80 ${
-              windowWidth < 500 && "text-[13px]"
-            } cursor-pointer z-20 overflow-hidden`}
           >
-            <motion.div
-              animate={button.isVisible ? { scaleX: 0 } : { scaleX: 1 }}
-              transition={{ duration: 0.5 }}
-              className="absolute top-0 left-0 w-full h-full rounded-full bg-blue-400 origin-right"
-            />
-            <img src="/calendar.png" alt="" className="max-w-[20px]" />
-            Ingatkan Via Google kalender
-          </button>
+            Ingatkan Via Google Kalender
+          </ButtonAnimate>
         </footer>
       </div>
     </MainLayout>
