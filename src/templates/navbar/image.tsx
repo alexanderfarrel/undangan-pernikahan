@@ -3,7 +3,7 @@ export default function Image({ onClick }: { onClick: () => void }) {
     <div
       id="image"
       onClick={onClick}
-      className="w-12 h-12 relative cursor-pointer p-2"
+      className="w-12 h-12 relative cursor-pointer p-2 mr-2"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

@@ -3,7 +3,7 @@ export default function Home({ onClick }: { onClick: () => void }) {
     <div
       id="home"
       onClick={onClick}
-      className="w-12 h-12 p-2 relative cursor-pointer -ml-[17px]"
+      className="w-12 h-12 p-2 relative cursor-pointer "
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

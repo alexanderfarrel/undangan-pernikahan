@@ -92,27 +92,28 @@ export default function Navbar({
 
     return () => ctx.revert();
   }, []);
-  const [xPosition, setXPosition] = useState(10);
+  const [xPosition, setXPosition] = useState(11.5);
 
   const home = useInView(refHome);
   const bride = useInView(refBride);
   const location = useInView(refLocation);
   const image = useInView(refImage);
-  const comment = useInView(refComment);
+  // const comment = useInView(refComment);
 
   useEffect(() => {
     const updateXWhenScroll = () => {
       if (home) {
-        setXPosition(10);
+        setXPosition(12.2);
       } else if (bride) {
-        setXPosition(29.5);
+        setXPosition(36);
       } else if (location) {
-        setXPosition(50);
+        setXPosition(60);
       } else if (image) {
-        setXPosition(70);
-      } else if (comment) {
-        setXPosition(90);
+        setXPosition(84);
       }
+      // else if (comment) {
+      //   setXPosition(90);
+      // }
     };
 
     window.addEventListener("scroll", updateXWhenScroll);
@@ -140,7 +141,7 @@ export default function Navbar({
   };
 
   return (
-    <div className="fixed bottom-3 left-1/2 -translate-x-1/2 min-w-[3rem] h-12 flex justify-center items-center z-30 px-4">
+    <div className="fixed bottom-3 left-1/2 -translate-x-1/2 min-w-[3rem] h-12 flex justify-center items-center z-30 px-0">
       <div id="parentRounded" className="w-full h-full absolute rounded-full">
         <div
           id="rounded"
@@ -158,7 +159,7 @@ export default function Navbar({
       <Heart onClick={() => handleScroll("bride")} />
       <Location onClick={() => handleScroll("location")} />
       <Image onClick={() => handleScroll("image")} />
-      <Comment onClick={() => handleScroll("comment")} />
+      {/* <Comment onClick={() => handleScroll("comment")} /> */}
     </div>
   );
 }
