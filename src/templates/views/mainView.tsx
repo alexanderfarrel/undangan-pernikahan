@@ -7,9 +7,6 @@ import StartAnimation from "../components/startAnimation";
 import Location from "../mainView/location";
 import Memorable from "../mainView/memorable";
 import Doa from "../mainView/doa";
-import Gift from "../mainView/gift";
-import Rsvp from "../mainView/rsvp";
-import Comment from "../mainView/comment";
 import EndFooter from "../mainView/endFooter";
 import Navbar from "./navbar";
 
@@ -28,7 +25,7 @@ export default function MainView({
   const refImage = useRef(null);
   const refComment = useRef(null);
 
-  const [name, setName] = useState("");
+  const [, setName] = useState("");
   useEffect(() => {
     const path = window.location.pathname;
     const name = path?.split("/")[1].split("-").join(" ");

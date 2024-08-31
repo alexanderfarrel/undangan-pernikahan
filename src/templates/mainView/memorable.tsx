@@ -3,7 +3,6 @@ import Images from "../components/images";
 import MainLayout from "../components/mainLayout";
 import SwiperCarousel from "../components/swiperCarousel";
 import { useInView, motion } from "framer-motion";
-import useVisibility from "../../services/hooks/useVisibility";
 
 const IMAGES = [
   {
