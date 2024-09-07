@@ -11,6 +11,39 @@ import RsvpAdmin from "./templates/views/rsvpAdmin";
 function App() {
   const [isOpen, setIsOpen] = useState(false);
 
+  const audioDownload = new Audio("/audio/Beautiful In White Compress.mp3");
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  function preloadAudio(audioElement: HTMLAudioElement) {
+    return new Promise((resolve, reject) => {
+      audioElement.oncanplaythrough = resolve;
+      audioElement.onerror = reject;
+    });
+  }
+  useEffect(() => {
+    audioRef.current = audioDownload;
+    Promise.all([preloadAudio(audioDownload)])
+      .then(() => {
+        // Set audio properties after preloading
+        audioDownload.loop = true; // Audio will loop
+
+        // Append the audio element to the DOM if necessary
+        document.body.appendChild(audioDownload);
+      })
+      .catch(console.error);
+  }, []);
+
+  // useEffect(() => {
+  //   const audioElement = document.getElementById("audio") as HTMLAudioElement;
+  //   preloadAudio(audioElement).catch(console.error);
+  // }, []);
+
+  // const audioDownloadComplete = () => {
+  //   console.log("Download Complete");
+  // };
+  // const audioDownloadFailed = () => {
+  //   console.log("Download Failed");
+  // };
+
   const audio = useRef<HTMLAudioElement>(null);
 
   useEffect(() => {
@@ -73,22 +106,22 @@ function App() {
                     filter: "brightness(0.3)",
                   }}
                 />
-                <MainView isOpen={isOpen} audio={audio} />
+                <MainView isOpen={isOpen} audio={audioRef} />
                 <WelcomeView
                   setIsOpen={setIsOpen}
                   isOpen={isOpen}
-                  audio={audio}
+                  audio={audioRef}
                 />
                 <IntroView />
               </div>
-              <audio
+              {/* <audio
                 ref={audio}
                 id="audio"
-                src="/audio/Shane Filan - Beautiful In White (Official Video).mp3"
+                src="/audio/Beautiful In White Compress.mp3"
                 loop
               >
                 Your browser does not support the audio element.
-              </audio>
+              </audio> */}
             </>
           }
         />

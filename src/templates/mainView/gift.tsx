@@ -11,14 +11,9 @@ export default function Gift() {
         cashless.
       </p>
       <Bank
-        image="https://app.sangmempelai.id/webview/template/front/amplop/3858392155330e473a00303bd34d374e.png"
-        rek="2148036309"
-        name="a/n Gesty Wijining Tyas"
-      />
-      <Bank
-        image="https://app.sangmempelai.id/webview/template/front/amplop/40fc5c042265bc203fea6827bca563ca.png"
-        rek="7315006091"
-        name="a/n Dimas Ilham Rakhmawan"
+        image="/images/bca.png"
+        rek="2610177657"
+        name="a/n Agustina untari"
       />
       <img
         src="https://app.sangmempelai.id/webview/template/front/amplop/187ece4abf101efceac87481ccf9dd5d.png"
@@ -28,8 +23,8 @@ export default function Gift() {
       <div className="font-medium z-10">
         <p>Alamat Pengiriman Kado :</p>
         <p>
-          Gesty wijining Tyas (08818592509) Jl.Pramuka Desa Kedungwringin
-          RT.02/RW.05 Kecamatan Jatilawang Kabupaten Banyumas
+          Agustina Untari (08818592509) Pancasan, Desa Blabursari RT 01 RW 06
+          Kec. Ajibarang Kab Banyumas
         </p>
       </div>
     </MainLayout>

@@ -16,7 +16,7 @@ export default function Bank({
   };
   return (
     <div className="flex flex-col items-center justify-center">
-      <img className="max-w-[150px] w-full" src={image} alt="" />
+      <img className="max-w-[150px] -my-5 w-full" src={image} alt="" />
       <p className="font-medium">{rek}</p>
       <p className="font-medium mb-2">{name}</p>
       <Button onClick={copyToClipboard} image="/icons/copy.png">

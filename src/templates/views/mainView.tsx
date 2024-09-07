@@ -5,10 +5,10 @@ import Introduction from "../mainView/introduction";
 import useWindowWidth from "../../services/hooks/useWindowWidth";
 import StartAnimation from "../components/startAnimation";
 import Location from "../mainView/location";
-import Memorable from "../mainView/memorable";
 import Doa from "../mainView/doa";
 import EndFooter from "../mainView/endFooter";
 import Navbar from "./navbar";
+import Gift from "../mainView/gift";
 
 export default function MainView({
   isOpen,
@@ -41,32 +41,22 @@ export default function MainView({
   const [isPlaying, setIsPlaying] = useState(true);
 
   const handleAudio = () => {
-    if (audio.current) {
-      if (audio.current.paused) {
-        audio.current.play();
+    if (audio?.current) {
+      if (audio?.current?.paused) {
+        audio?.current?.play();
         setIsPlaying(true);
       } else {
-        audio.current.pause();
+        audio?.current?.pause();
         setIsPlaying(false);
       }
     }
   };
 
   useEffect(() => {
-    const Audio = audio.current;
-
-    if (!Audio) {
+    if (!audio?.current) {
       return;
     }
-    Audio.play();
-    audio.current.play();
-    // Menunggu Audio siap diputar
-    Audio.addEventListener("canplaythrough", () => {
-      // Memastikan Audio diputar
-      Audio.play().catch((error: any) => {
-        console.error("Autoplay gagal:", error);
-      });
-    });
+    audio?.current?.play();
   }, []);
 
   return (
@@ -120,8 +110,8 @@ export default function MainView({
             <Introduction windowWidth={windowWidth} refBride={refBride} />
             <Location refLocation={refLocation} />
             <Doa />
-            <Memorable windowWidth={windowWidth} refImage={refImage} />
-            {/* <Gift /> */}
+            {/* <Memorable windowWidth={windowWidth} refImage={refImage} /> */}
+            <Gift />
             {/* <Rsvp name={name} /> */}
             {/* <Comment refComment={refComment} name={name} /> */}
             <EndFooter />

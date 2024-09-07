@@ -23,7 +23,7 @@ export default function WelcomeView({
   }, []);
 
   const handleClick = () => {
-    audio.current.play();
+    audio?.current?.play();
     setIsOpen(true);
   };
   return (
