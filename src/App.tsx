@@ -112,7 +112,7 @@ function App() {
                   isOpen={isOpen}
                   audio={audioRef}
                 />
-                {/* <IntroView /> */}
+                <IntroView />
               </div>
               {/* <audio
                 ref={audio}
