@@ -91,7 +91,7 @@ export default function Navbar({
 
     return () => ctx.revert();
   }, []);
-  const [xPosition, setXPosition] = useState(11.5);
+  const [xPosition, setXPosition] = useState(12.2);
 
   const home = useInView(refHome);
   const bride = useInView(refBride);

@@ -9,6 +9,7 @@ import Doa from "../mainView/doa";
 import EndFooter from "../mainView/endFooter";
 import Navbar from "./navbar";
 import Gift from "../mainView/gift";
+import Schedule from "../mainView/schedule";
 
 export default function MainView({
   isOpen,
@@ -109,6 +110,7 @@ export default function MainView({
             <Opening refHome={refHome} />
             <Introduction windowWidth={windowWidth} refBride={refBride} />
             <Location refLocation={refLocation} />
+            <Schedule />
             <Doa />
             {/* <Memorable windowWidth={windowWidth} refImage={refImage} /> */}
             <Gift />
