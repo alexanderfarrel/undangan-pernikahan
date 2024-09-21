@@ -1,5 +1,4 @@
 import { useEffect, useLayoutEffect, useState } from "react";
-import Image from "../navbar/image";
 import Heart from "../navbar/heart";
 import Location from "../navbar/location";
 import Home from "../navbar/home";
@@ -7,12 +6,13 @@ import { useInView } from "framer-motion";
 import { motion } from "framer-motion";
 import gsap from "gsap";
 import { CustomEase } from "gsap/all";
+import Schedule from "../navbar/schedule";
 
 export default function Navbar({
   refHome,
   refBride,
   refLocation,
-  refImage,
+  refSchedule,
   refComment,
 }: any) {
   useLayoutEffect(() => {
@@ -56,7 +56,7 @@ export default function Navbar({
           "-=0.4"
         )
         .from(
-          "#image",
+          "#schedule",
           {
             opacity: 0,
             x: -20,
@@ -96,7 +96,7 @@ export default function Navbar({
   const home = useInView(refHome);
   const bride = useInView(refBride);
   const location = useInView(refLocation);
-  const image = useInView(refImage);
+  const schedule = useInView(refSchedule);
   // const comment = useInView(refComment);
 
   useEffect(() => {
@@ -104,11 +104,11 @@ export default function Navbar({
       if (home) {
         setXPosition(12.2);
       } else if (bride) {
-        setXPosition(36);
+        setXPosition(36.4);
       } else if (location) {
-        setXPosition(60);
-      } else if (image) {
-        setXPosition(84);
+        setXPosition(60.8);
+      } else if (schedule) {
+        setXPosition(85.1);
       }
       // else if (comment) {
       //   setXPosition(90);
@@ -130,9 +130,9 @@ export default function Navbar({
     } else if (desc === "location") {
       // setXPosition(50);
       refLocation.current.scrollIntoView({ behavior: "smooth" });
-    } else if (desc === "image") {
+    } else if (desc === "schedule") {
       // setXPosition(70);
-      refImage.current.scrollIntoView({ behavior: "smooth" });
+      refSchedule.current.scrollIntoView({ behavior: "smooth" });
     } else if (desc === "comment") {
       // setXPosition(90);
       refComment.current.scrollIntoView({ behavior: "smooth" });
@@ -157,7 +157,7 @@ export default function Navbar({
       <Home onClick={() => handleScroll("home")} />
       <Heart onClick={() => handleScroll("bride")} />
       <Location onClick={() => handleScroll("location")} />
-      <Image onClick={() => handleScroll("image")} />
+      <Schedule onClick={() => handleScroll("schedule")} />
       {/* <Comment onClick={() => handleScroll("comment")} /> */}
     </div>
   );

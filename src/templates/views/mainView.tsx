@@ -23,7 +23,7 @@ export default function MainView({
   const refHome = useRef(null);
   const refBride = useRef(null);
   const refLocation = useRef(null);
-  const refImage = useRef(null);
+  const refSchedule = useRef(null);
   const refComment = useRef(null);
 
   const [, setName] = useState("");
@@ -104,13 +104,13 @@ export default function MainView({
               refHome={refHome}
               refBride={refBride}
               refLocation={refLocation}
-              refImage={refImage}
+              refSchedule={refSchedule}
               refComment={refComment}
             />
             <Opening refHome={refHome} />
             <Introduction windowWidth={windowWidth} refBride={refBride} />
             <Location refLocation={refLocation} />
-            <Schedule />
+            <Schedule refSchedule={refSchedule} />
             <Doa />
             {/* <Memorable windowWidth={windowWidth} refImage={refImage} /> */}
             <Gift />
