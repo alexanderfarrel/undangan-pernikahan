@@ -110,7 +110,7 @@ export default function Location({ refLocation }: { refLocation: any }) {
         ref={iframe.ref}
         animate={iframe.isVisible ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 0.7 }}
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.332068757914!2d109.07892057588212!3d-7.428456023180174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6563e61b3acfab%3A0x1bd8c229d1692d41!2sBlabursari%2C%20Pancasan%2C%20Kec.%20Ajibarang%2C%20Kabupaten%20Banyumas%2C%20Jawa%20Tengah!5e0!3m2!1sid!2sid!4v1725122742043!5m2!1sid!2sid"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.3362113777557!2d109.07496517588203!3d-7.427995873175115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6563eec0fad06f%3A0xe670cea41bb01fe1!2sJl.%20Blabursari%2C%20Pancasan%2C%20Kec.%20Ajibarang%2C%20Kabupaten%20Banyumas%2C%20Jawa%20Tengah%2053163!5e0!3m2!1sid!2sid!4v1727015564296!5m2!1sid!2sid"
         width="100%"
         height="400"
         className="max-h-[400px] z-10 -mt-5 border-2 border-blue-400 rounded-xl outline-none"
@@ -123,9 +123,7 @@ export default function Location({ refLocation }: { refLocation: any }) {
         windowWidth={windowWidth}
         img="/icons/send.png"
         onClick={() => {
-          window.open(
-            "https://www.google.com/maps/place/Blabursari,+Pancasan,+Kec.+Ajibarang,+Kabupaten+Banyumas,+Jawa+Tengah/@-7.428456,109.0789206,17z/data=!3m1!4b1!4m6!3m5!1s0x2e6563e61b3acfab:0x1bd8c229d1692d41!8m2!3d-7.428564!4d109.0802438!16s%2Fg%2F11g0gc6l__?entry=ttu&g_ep=EgoyMDI0MDgyOC4wIKXMDSoASAFQAw%3D%3D"
-          );
+          window.open("https://maps.app.goo.gl/eJmkxxb41XydFVYRA");
         }}
       >
         Lihat Lokasi Acara
