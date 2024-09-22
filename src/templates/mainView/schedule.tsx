@@ -57,7 +57,7 @@ export default function Schedule({ refSchedule }: { refSchedule: any }) {
                 }}
                 className="w-3 h-3 rounded-full bg-gray-400 absolute -translate-y-1/2 -translate-x-1/2"
               />
-              <div className="absolute top-0 right-full whitespace-nowrap p-4 mt-4 mr-3 text-gray-400">
+              <div className="absolute top-0 right-full whitespace-nowrap p-4 mt-4 text-gray-400">
                 <motion.p
                   initial={{ opacity: 0, x: 20 }}
                   animate={
@@ -69,17 +69,12 @@ export default function Schedule({ refSchedule }: { refSchedule: any }) {
                   className="flex items-center justify-center"
                 >
                   16 WIB
-                  <img
-                    src="/images/gayung.png"
-                    alt="gayung"
-                    className="w-full h-full max-w-14 max-h-14 rotate-[-20deg]"
-                  />
                 </motion.p>
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={text2.isVisible ? { opacity: 1 } : { opacity: 0 }}
                   transition={{ duration: 0.4, delay: 0.7 }}
-                  className="absolute top-0 left-full whitespace-nowrap ml-3 px-4 pb-1 border-b-2 border-gray-400 border-dashed"
+                  className="absolute top-0 left-full whitespace-nowrap px-4 pb-1 border-b-2 border-gray-400 border-dashed"
                 >
                   <motion.p
                     initial={{ opacity: 0, x: -20 }}
@@ -168,7 +163,7 @@ export default function Schedule({ refSchedule }: { refSchedule: any }) {
                       : { opacity: 0, x: -20 }
                   }
                   transition={{ duration: 0.7, delay: 1 }}
-                  className="flex items-center justify-center gap-2 ml-4"
+                  className="flex items-center justify-center gap-2 ml-5"
                 >
                   <img
                     src="/images/ring.png"
@@ -210,7 +205,7 @@ export default function Schedule({ refSchedule }: { refSchedule: any }) {
                       : { opacity: 0, x: 20 }
                   }
                   transition={{ duration: 0.7, delay: 1.2 }}
-                  className="flex items-center justify-center gap-2"
+                  className="flex items-center justify-center"
                 >
                   10 WIB
                   <img
@@ -243,7 +238,7 @@ export default function Schedule({ refSchedule }: { refSchedule: any }) {
                 </motion.div>
               </div>
               {/* content */}
-              <div className="absolute top-40 left-full whitespace-nowrap p-4 mt-2 ml-4 text-gray-400">
+              <div className="absolute top-40 left-full whitespace-nowrap p-4 mt-2 ml-5 text-gray-400">
                 <motion.p
                   initial={{ opacity: 0, x: -20 }}
                   animate={
@@ -265,7 +260,7 @@ export default function Schedule({ refSchedule }: { refSchedule: any }) {
                   initial={{ opacity: 0 }}
                   animate={text3.isVisible ? { opacity: 1 } : { opacity: 0 }}
                   transition={{ duration: 0.4, delay: 1.4 }}
-                  className="absolute top-2 right-full whitespace-nowrap px-4 pb-1 mr-4 border-b-2 border-gray-400 border-dotted"
+                  className="absolute top-2 right-full whitespace-nowrap px-4 pb-1 mr-5 border-b-2 border-gray-400 border-dotted"
                 >
                   <motion.p
                     initial={{ opacity: 0, x: 20 }}
