@@ -110,7 +110,7 @@ export default function Location({ refLocation }: { refLocation: any }) {
         ref={iframe.ref}
         animate={iframe.isVisible ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 0.7 }}
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.3362113777557!2d109.07496517588203!3d-7.427995873175115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6563eec0fad06f%3A0xe670cea41bb01fe1!2sJl.%20Blabursari%2C%20Pancasan%2C%20Kec.%20Ajibarang%2C%20Kabupaten%20Banyumas%2C%20Jawa%20Tengah%2053163!5e0!3m2!1sid!2sid!4v1727015564296!5m2!1sid!2sid"
+        src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d1978.1553508111524!2d109.07801584560428!3d-7.4308289716635905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zN8KwMjUnNTAuNCJTIDEwOcKwMDQnNDIuMiJF!5e0!3m2!1sid!2sid!4v1727878292765!5m2!1sid!2sid"
         width="100%"
         height="400"
         className="max-h-[400px] z-10 -mt-5 border-2 border-blue-400 rounded-xl outline-none"
