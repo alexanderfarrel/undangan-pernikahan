@@ -20,7 +20,7 @@ export default function Introduction({
     seconds: 0,
   });
 
-  const countdownDate = new Date("October 19, 2024 00:00:00").getTime();
+  const countdownDate = new Date("October 19, 2024 09:00:00").getTime();
 
   const interval = setInterval(() => {
     const now = new Date().getTime();
@@ -110,7 +110,7 @@ export default function Introduction({
           refDesc={desc1.ref}
           isDescInVIew={desc1.isVisible}
           name="Agustina Untari"
-          desc="Putri kedua dari bapak nasikin dan ibu warsinem"
+          desc="Putri kedua dari Bapak Nasikin dan Ibu Warsinem"
         />
         <ProfileCard
           refImage={profileCard2.ref}
@@ -122,7 +122,7 @@ export default function Introduction({
           refDesc={desc2.ref}
           isDescInVIew={desc2.isVisible}
           name="Nadiwa Hasby N"
-          desc="Putra pertama dari bapak gunawan dan ibu murdiyani"
+          desc="Putra pertama dari Bapak Gunawan dan Ibu Murdiyani"
         />
         <footer className="mx-5 mt-10 flex flex-col gap-10">
           <motion.p

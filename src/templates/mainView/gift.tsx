@@ -64,8 +64,8 @@ export default function Gift() {
           }
           transition={{ duration: 0.7 }}
         >
-          Agustina Untari (08818592509) Pancasan, Desa Blabursari RT 01 RW 06
-          Kec. Ajibarang Kab Banyumas
+          Agustina Untari (+62 821-3841-7891 ) Pancasan, Desa Blabursari RT 01
+          RW 06 Kec. Ajibarang Kab Banyumas
         </motion.p>
       </div>
     </MainLayout>

@@ -32,16 +32,20 @@ export default function ProfileCard({
       >
         <motion.div
           animate={isImageInVIew ? { opacity: 1 } : { opacity: 0 }}
-          className="w-full h-full rounded-full"
+          className="w-full h-full rounded-full bg-gray-500"
           style={{
-            backgroundImage: "url('/images/welcome.jpg')",
+            backgroundImage:
+              name == "Agustina Untari"
+                ? "url('/images/female.png')"
+                : "url('/images/male.png')",
             backgroundRepeat: "no-repeat",
-            backgroundPosition: "center",
-            backgroundPositionX: "38%",
+            backgroundPosition:
+              name == "Agustina Untari" ? "0px 12px" : "0px 10px", // Gabungkan X dan Y
             backgroundSize: "cover",
           }}
         />
       </motion.div>
+
       <h1 ref={refName} className="relative text-2xl font-bold">
         {name}{" "}
         <motion.span
