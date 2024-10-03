@@ -7,7 +7,7 @@ export default {
     },
     extend: {
       boxShadow: {
-        custom: "0 0px 20px 3px rgba(0, 0, 0, 0.1)",
+        custom: "0 0px 10px 4px rgba(0, 0, 0, 0.1)",
       },
     },
   },

@@ -32,7 +32,7 @@ export default function Location({ refLocation }: { refLocation: any }) {
         <LocationCard
           title="Resepsi"
           date="Sabtu, 19 Oktober 2024"
-          time="09.00 - 10.00 WIB"
+          time="10.00 WIB - Selesai"
           home="Kediaman mempelai wanita"
           location="Pancasan, Desa Blabursari RT.01/RW.06 Kec.Ajibarang Kab.Banyumas"
         />

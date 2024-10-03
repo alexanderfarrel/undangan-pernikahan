@@ -21,7 +21,7 @@ export default function LocationCard({
   const text5 = useVisibility();
 
   return (
-    <div className="shadow-custom p-4 flex flex-col gap-2 text-center max-w-[350px] z-10 bg-white">
+    <div className="shadow-custom p-4 flex flex-col gap-2 text-center max-w-[350px] z-10 bg-white rounded-xl">
       <motion.h1
         ref={text1.ref}
         animate={
