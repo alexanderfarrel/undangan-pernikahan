@@ -88,7 +88,7 @@ export default function WelcomeView({
               transition: { duration: 0.5, delay: 0.3 },
             }
           }
-          className={`text-white/80`}
+          className={`text-white/80 besley-10 pb-1`}
         >
           Kpd. Bpk/Ibu/Saudara/i
         </motion.p>
@@ -102,7 +102,7 @@ export default function WelcomeView({
                   transition: { duration: 0.5, delay: 0.2 },
                 }
               }
-              className="text-white font-medium capitalize -mt-1"
+              className="text-white font-medium capitalize -mt-1 besley-15"
             >
               {name}
             </motion.h1>

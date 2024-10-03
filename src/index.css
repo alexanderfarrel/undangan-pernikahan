@@ -86,12 +86,28 @@
   font-family: GreatVibes-Regular;
   src: url(/fonts/GreatVibes-Regular.ttf);
 }
+@font-face {
+  font-family: Besley-VariableFont_wght;
+  src: url(/fonts/Besley-VariableFont_wght.ttf);
+}
 
 html,
 body {
   font-family: "Comic Neue", cursive;
 }
 
+.besley-10 {
+  font-weight: 300;
+  font-size: 15px;
+  font-family: Besley-VariableFont_wght;
+  line-height: 1.2;
+}
+.besley-15 {
+  font-weight: 300;
+  font-size: 20px;
+  font-family: Besley-VariableFont_wght;
+  line-height: 1.2;
+}
 .latin-20 {
   font-weight: 300;
   font-size: 40px;
