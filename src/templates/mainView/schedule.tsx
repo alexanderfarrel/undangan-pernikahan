@@ -30,7 +30,7 @@ export default function Schedule({ refSchedule }: { refSchedule: any }) {
               transition={{ duration: 0.7, delay: 0.2 }}
               className="font-bold text-2xl text-gray-400 mb-4"
             >
-              Tanggal 18
+              Tanggal 29
             </motion.h2>
             {/* middle line */}
             <motion.div
@@ -123,7 +123,7 @@ export default function Schedule({ refSchedule }: { refSchedule: any }) {
               transition={{ duration: 0.7, delay: 0.2 }}
               className="font-bold text-2xl text-gray-400 mb-4"
             >
-              Tanggal 19
+              Tanggal 30
             </motion.h2>
             {/* middle line */}
             <motion.div

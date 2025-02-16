@@ -7,6 +7,8 @@ import {
 import CommentBox from "../components/commentBox";
 import MainLayout from "../components/mainLayout";
 import { useEffect, useState } from "react";
+import useVisibility from "../../services/hooks/useVisibility";
+import { motion } from "framer-motion";
 
 type commentTypes = {
   id: string;
@@ -28,6 +30,11 @@ export default function Comment({
   refComment: any;
   name?: string;
 }) {
+  const text1 = useVisibility();
+  const input1 = useVisibility();
+  const input2 = useVisibility();
+  const btn1 = useVisibility();
+
   const [comments, setComments] = useState<commentTypes[]>([]);
 
   useEffect(() => {
@@ -134,14 +141,27 @@ export default function Comment({
   };
   return (
     <MainLayout height="h-full" className="gap-5">
-      <h1 ref={refComment} className="text-xl latin-25 text-center">
+      <motion.h1
+        animate={
+          text1.isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: -30 }
+        }
+        transition={{ duration: 0.7 }}
+        ref={refComment}
+        className="text-xl latin-20 text-center"
+      >
         Kirim Ucapan & Doa Restu
-      </h1>
+      </motion.h1>
       <form
+        ref={text1.ref}
         onSubmit={handleFormSubmit}
         className="flex flex-col gap-2 w-full z-10"
       >
-        <input
+        <motion.input
+          ref={input1.ref}
+          animate={
+            input1.isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: -30 }
+          }
+          transition={{ duration: 0.7 }}
           name="name"
           type="text"
           placeholder="Nama Lengkap"
@@ -151,19 +171,29 @@ export default function Comment({
           readOnly
           className="border p-2 bg-gray-200 capitalize"
         />
-        <input
+        <motion.input
+          ref={input2.ref}
+          animate={
+            input2.isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: -30 }
+          }
+          transition={{ duration: 0.7 }}
           name="comment"
           type="text"
           placeholder="Tulis ucapan & doa restu"
           disabled={name == "@tinandewa_admin"}
           className="border p-2 bg-gray-200 outline-none"
         />
-        <button
+        <motion.button
+          ref={btn1.ref}
+          animate={
+            btn1.isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: -30 }
+          }
+          transition={{ duration: 0.7 }}
           type="submit"
           className="bg-blue-400 px-3 py-2 text-white rounded-full"
         >
           Kirim
-        </button>
+        </motion.button>
       </form>
       <div className="max-h-[180px] bg-white overflow-y-scroll comment-scrollbar z-10 w-full">
         {comments?.map((comment) => (

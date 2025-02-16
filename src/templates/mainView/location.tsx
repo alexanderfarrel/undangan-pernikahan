@@ -24,17 +24,17 @@ export default function Location({ refLocation }: { refLocation: any }) {
       <div ref={refLocation} className="flex flex-col gap-5 z-10">
         <LocationCard
           title="Akad Nikah"
-          date="Sabtu, 19 Oktober 2024"
+          date="Sabtu, 30 Januari 2030"
           time="09.00 - 10.00 WIB"
           home="Kediaman mempelai wanita"
-          location="Pancasan, Desa Blabursari RT.01/RW.06 Kec.Ajibarang Kab.Banyumas"
+          location="Jl. Malioboro, Sosromenduran, Gedong Tengen, Kota Yogyakarta"
         />
         <LocationCard
           title="Resepsi"
-          date="Sabtu, 19 Oktober 2024"
+          date="Sabtu, 30 Januari 2030"
           time="10.00 WIB - Selesai"
           home="Kediaman mempelai wanita"
-          location="Pancasan, Desa Blabursari RT.01/RW.06 Kec.Ajibarang Kab.Banyumas"
+          location="Jl. Malioboro, Sosromenduran, Gedong Tengen, Kota Yogyakarta"
         />
       </div>
       <motion.p
@@ -123,7 +123,7 @@ export default function Location({ refLocation }: { refLocation: any }) {
         windowWidth={windowWidth}
         img="/icons/send.png"
         onClick={() => {
-          window.open("https://maps.app.goo.gl/eJmkxxb41XydFVYRA");
+          window.open("https://maps.app.goo.gl/sZF1FHrR34DB2u1K6");
         }}
       >
         Lihat Lokasi Acara

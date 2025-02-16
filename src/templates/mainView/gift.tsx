@@ -32,11 +32,7 @@ export default function Gift() {
         memberi adalah ungkapan tanda kasih Anda, Anda dapat memberi kado secara
         cashless.
       </motion.p>
-      <Bank
-        image="/images/bca.png"
-        rek="2610177657"
-        name="a/n Agustina untari"
-      />
+      <Bank image="/images/bca.png" rek="0123456789" name="a/n Tina" />
       <motion.img
         ref={image.ref}
         animate={
@@ -64,8 +60,7 @@ export default function Gift() {
           }
           transition={{ duration: 0.7 }}
         >
-          Agustina Untari (+62 821-3841-7891 ) Pancasan, Desa Blabursari RT 01
-          RW 06 Kec. Ajibarang Kab Banyumas
+          Tina, Jl. Malioboro, Sosromenduran, Gedong Tengen, Kota Yogyakarta
         </motion.p>
       </div>
     </MainLayout>

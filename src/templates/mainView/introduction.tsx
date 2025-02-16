@@ -20,7 +20,7 @@ export default function Introduction({
     seconds: 0,
   });
 
-  const countdownDate = new Date("October 19, 2024 09:00:00").getTime();
+  const countdownDate = new Date("January 30, 2030 09:00:00").getTime();
 
   const interval = setInterval(() => {
     const now = new Date().getTime();
@@ -109,8 +109,8 @@ export default function Introduction({
           isFlowerInVIew={flower1.isVisible}
           refDesc={desc1.ref}
           isDescInVIew={desc1.isVisible}
-          name="Agustina Untari"
-          desc="Putri kedua dari Bapak Nasikin dan Ibu Warsinem"
+          name="Tina"
+          desc="Putri kedua dari Bapak Naruto dan Ibu Hinata"
         />
         <ProfileCard
           refImage={profileCard2.ref}
@@ -121,8 +121,8 @@ export default function Introduction({
           isFlowerInVIew={flower2.isVisible}
           refDesc={desc2.ref}
           isDescInVIew={desc2.isVisible}
-          name="Nadiwa Hasby N"
-          desc="Putra pertama dari Bapak Gunawan dan Ibu Murdiyani"
+          name="Dewa"
+          desc="Putra pertama dari Bapak Sasuke dan Ibu Sakura"
         />
         <footer className="mx-5 mt-10 flex flex-col gap-10">
           <motion.p
@@ -131,7 +131,7 @@ export default function Introduction({
             transition={{ duration: 0.7 }}
             className="text-gray-500"
           >
-            Sabtu, 19 Oktober 2024
+            Sabtu, 30 Januari 2030
           </motion.p>
           <div ref={countdown.ref} className="flex gap-3 justify-center">
             <CountdownCard
@@ -164,7 +164,7 @@ export default function Introduction({
             img="/calendar.png"
             onClick={() => {
               window.open(
-                "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NHZiNmNuaWc1ZWR2bTUxa25xcmxuZ3U0NTAgNjY1MDdmMTgzMzU2YjJmMmE0YzQ2YTFlOWJmMjg4YmJmZDI2MDMxYTg1Mjg0NWY3MGZiNmI1NTliOTI4OTEyZUBn&tmsrc=66507f183356b2f2a4c46a1e9bf288bbfd26031a852845f70fb6b559b928912e%40group.calendar.google.com",
+                "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MGc5OGIyb2tjMmY0NGtlMWg4bzI2aDY0dnUgMWJiNTJjNGUyOTMyNWY3MDRmNDJjMjM5NjIyM2I2NTFhOTZiMTg3ZGUyYzYzMzk1NTI2MGQ1ZjQxNjE5ZThiMEBn&tmsrc=1bb52c4e29325f704f42c2396223b651a96b187de2c633955260d5f41619e8b0%40group.calendar.google.com",
                 "_blank"
               );
             }}

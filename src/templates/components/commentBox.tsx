@@ -1,8 +1,11 @@
+/* eslint-disable @typescript-eslint/ban-types */
 import { useEffect, useState } from "react";
 import Edit from "../../assets/icons/edit";
 import Trash from "../../assets/icons/trash";
 import { updateData } from "../../services/firebase/services";
 import toast from "react-hot-toast";
+import { motion } from "framer-motion";
+import useVisibility from "../../services/hooks/useVisibility";
 
 export default function CommentBox({
   id,
@@ -23,6 +26,7 @@ export default function CommentBox({
   handleDeleteComment: Function;
   getComments: Function;
 }) {
+  const animation = useVisibility();
   const [edit, setEdit] = useState(false);
   const [newComment, setNewComment] = useState(comment);
   const newDate = new Date(
@@ -60,7 +64,14 @@ export default function CommentBox({
     }
   }, [edit]);
   return (
-    <div className="border-b p-2">
+    <motion.div
+      ref={animation.ref}
+      animate={
+        animation.isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: -30 }
+      }
+      transition={{ duration: 0.7 }}
+      className="border-b p-2"
+    >
       <div className="flex justify-between">
         <h1 className="font-medium text-sm">{name.split("_").join(" ")}</h1>
         <p className="text-xs text-gray-500">{newDate}</p>
@@ -108,6 +119,6 @@ export default function CommentBox({
           )}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

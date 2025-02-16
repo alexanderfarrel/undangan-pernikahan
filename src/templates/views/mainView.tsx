@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import Opening from "../mainView/opening";
@@ -10,12 +11,14 @@ import EndFooter from "../mainView/endFooter";
 import Navbar from "./navbar";
 import Gift from "../mainView/gift";
 import Schedule from "../mainView/schedule";
+import Comment from "../mainView/comment";
+import Rsvp from "../mainView/rsvp";
 
 export default function MainView({
   isOpen,
   audio,
 }: {
-  isOpen: Boolean;
+  isOpen: boolean;
   audio: any;
 }) {
   const windowWidth = useWindowWidth();
@@ -26,7 +29,7 @@ export default function MainView({
   const refSchedule = useRef(null);
   const refComment = useRef(null);
 
-  const [, setName] = useState("");
+  const [name, setName] = useState("");
   useEffect(() => {
     const path = window.location.pathname;
     const name = path?.split("/")[1].split("-").join(" ");
@@ -114,8 +117,8 @@ export default function MainView({
             <Doa />
             {/* <Memorable windowWidth={windowWidth} refImage={refImage} /> */}
             <Gift />
-            {/* <Rsvp name={name} /> */}
-            {/* <Comment refComment={refComment} name={name} /> */}
+            <Rsvp name={name} />
+            <Comment refComment={refComment} name={name} />
             <EndFooter />
           </React.Fragment>
         )}
