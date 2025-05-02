@@ -110,7 +110,7 @@ export default function Location({ refLocation }: { refLocation: any }) {
         ref={iframe.ref}
         animate={iframe.isVisible ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 0.7 }}
-        src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d1978.1553508111524!2d109.07801584560428!3d-7.4308289716635905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zN8KwMjUnNTAuNCJTIDEwOcKwMDQnNDIuMiJF!5e0!3m2!1sid!2sid!4v1727878292765!5m2!1sid!2sid"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15811.851631021013!2d110.34725366901772!3d-7.793752100714694!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5825fa6106c5%3A0x3ea4c521a5ed1133!2sJl.%20Malioboro%2C%20Sosromenduran%2C%20Gedong%20Tengen%2C%20Kota%20Yogyakarta%2C%20Daerah%20Istimewa%20Yogyakarta!5e0!3m2!1sid!2sid!4v1746203240090!5m2!1sid!2sid"
         width="100%"
         height="400"
         className="max-h-[400px] z-10 -mt-5 border-2 border-blue-400 rounded-xl outline-none"
